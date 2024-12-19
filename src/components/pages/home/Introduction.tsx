@@ -54,7 +54,7 @@ export default function Introduction() {
           <Image
             src="/images/pepep-1.png"
             width={200}
-            height={200}
+            height={300}
             alt="pepep"
           />
           {/* social media */}
