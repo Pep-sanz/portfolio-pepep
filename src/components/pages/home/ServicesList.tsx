@@ -7,7 +7,7 @@ import { IServices } from '@/types/services';
 import { servicesMock } from '@/constants/services';
 import { GoDotFill } from 'react-icons/go';
 
-export default function ServicesList({ services }: { services: IServices[] }) {
+export default function ServicesList({ services }: { services?: IServices[] }) {
   return (
     <section className="md:w-[75vw] rounded-md bg-secondary shadow-md p-4 md:px-16 md:py-12">
       <div className="space-y-2">
