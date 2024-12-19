@@ -1,7 +1,5 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
-
 import { ReactNode } from 'react';
 
 interface ContainerProps {
@@ -17,13 +15,11 @@ export default function Container({
   withMarginTop = true,
   ...others
 }: ContainerProps) {
-  const searchParams = useSearchParams();
-  const readMode = searchParams?.get('read-mode');
   return (
     <div
       data-testid="container"
       className={`mb-10 ${
-        (readMode !== 'true' || withMarginTop) && 'sm:mt-20 md:mt-16'
+        withMarginTop && 'sm:mt-20 md:mt-16'
       } p-4 md:p-8 lg:pr-0 ${className}`}
       {...others}
     >
