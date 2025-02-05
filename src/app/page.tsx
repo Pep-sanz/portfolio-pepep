@@ -1,12 +1,8 @@
 'use client';
 
-import Container from '@/components/elements/Container';
-import HomeSection from '@/components/pages/home/HomeSection';
+import HomeSection from '@/modules/home/HomeSection';
+import 'reactflow/dist/style.css';
 
 export default function Home() {
-  return (
-    <Container>
-      <HomeSection />
-    </Container>
-  );
+  return <HomeSection />;
 }

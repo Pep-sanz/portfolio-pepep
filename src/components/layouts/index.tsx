@@ -11,11 +11,15 @@ export default function Layouts({ children }: { children: ReactNode }) {
   const hideSidebar = ['/me'].includes(pathName);
 
   return (
-    <div className="flex items-center flex-col py-6 md:py-8 ">
-      {!hideSidebar && <Navbar />}
-      {!hideSidebar && <MobileHeader />}
+    <div className="space-y-6 md:space-y-10 py-6 min-h-screen h-full overflow-x-hidden">
+      <div className="container md:max-w-[80vw] items-center justify-center">
+        {!hideSidebar && <Navbar />}
+        {!hideSidebar && <MobileHeader />}
+      </div>
 
-      <main>{children}</main>
+      <main className="no-scrollbar h-full w-full scroll-smooth transition-all duration-300 lg:min-h-screen">
+        {children}
+      </main>
     </div>
   );
 }

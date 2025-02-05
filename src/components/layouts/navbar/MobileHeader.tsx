@@ -31,7 +31,7 @@ export default function MobileHeader() {
   }, [isOpen]);
 
   return (
-    <div className="flex flex-col w-[90vw] bg-secondary rounded-md px-4 py-4 shadow-sm sm:hidden">
+    <div className="flex flex-col w-full bg-secondary rounded-md px-4 py-4 shadow-sm sm:hidden">
       <div className="flex w-full items-center justify-between">
         <div className="flex space-x-2">
           <div className="z-10 h-max w-max rounded-full border-2 border-white shadow-md dark:border-neutral-800">

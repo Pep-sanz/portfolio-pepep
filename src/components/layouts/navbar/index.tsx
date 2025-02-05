@@ -9,7 +9,7 @@ export default function Navbar() {
   const filtered = MENU_ITEMS.filter((item) => item.isShow);
 
   return (
-    <div className="sm:flex hidden w-[90vw] lg:w-[60vw] h-16 px-6 z-50 justify-between items-center fixed top-8 dark:bg-secondary bg-white rounded-md shadow-md">
+    <div className="sm:flex hidden py-3 px-6 z-50 justify-between items-center sticky dark:bg-secondary bg-white rounded-md shadow-md">
       <div className="flex gap-6">
         {filtered.map((item) => {
           return <NavItems key={item.title} {...item} />;

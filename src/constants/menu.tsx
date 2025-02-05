@@ -44,7 +44,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     title: 'Task Board',
     href: '/board',
     icon: <LuTrello size={iconSize} />,
-    isShow: true,
+    isShow: false,
     isExternal: false,
     eventName: 'Pages: Task Board',
   },

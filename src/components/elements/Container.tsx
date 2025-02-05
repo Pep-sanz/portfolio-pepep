@@ -19,7 +19,7 @@ export default function Container({
     <div
       data-testid="container"
       className={`mb-10 ${
-        withMarginTop && 'sm:mt-20 md:mt-16'
+        withMarginTop && 'sm:mt-20 md:mt-24'
       } p-4 md:p-8 lg:pr-0 ${className}`}
       {...others}
     >
