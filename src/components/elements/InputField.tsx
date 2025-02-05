@@ -36,10 +36,13 @@ export default function InputField<TFormValue extends FieldValues>({
         <Textarea
           rows={rows}
           placeholder={renderPlaceholder}
-          {...register(name, rule)}
+          // {...register(name, rule)}
         />
       ) : (
-        <Input placeholder={renderPlaceholder} {...register(name, rule)} />
+        <Input
+          placeholder={renderPlaceholder}
+          // {...register(name, rule)}
+        />
       )}
       {error[name]?.type === 'required' && (
         <p role="alert" className="text-[10px] text-red-400">
