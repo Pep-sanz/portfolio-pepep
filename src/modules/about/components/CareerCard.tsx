@@ -7,7 +7,7 @@ const careerData = [
     year: '2020 - 2024',
     title: 'Software Engineer',
     company: 'Tech Solutions',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png',
+    logo: '/images/google-logo.png',
     description:
       'Developed web applications and collaborated with cross-functional teams.',
   },
@@ -15,7 +15,7 @@ const careerData = [
     year: '2018 - 2020',
     title: 'Junior Developer',
     company: 'Innovative Systems',
-    logo: 'https://upload.wikimedia.org/wikipedia/sco/thumb/2/21/Nvidia_logo.svg/1200px-Nvidia_logo.svg.png',
+    logo: '/images/google-logo.png',
     description:
       'Assisted in building scalable front-end features and maintained codebases.',
   },
@@ -23,7 +23,7 @@ const careerData = [
     year: '2015 - 2018',
     title: 'Intern Developer',
     company: 'Startup Inc.',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png',
+    logo: '/images/google-logo.png',
     description:
       'Worked on small projects and gained hands-on experience in development.',
   },
@@ -31,7 +31,7 @@ const careerData = [
     year: '2015 - 2018',
     title: 'Intern Developer',
     company: 'Startup Inc.',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png',
+    logo: '/images/google-logo.png',
     description:
       'Worked on small projects and gained hands-on experience in development.',
   },
@@ -39,7 +39,7 @@ const careerData = [
     year: '2015 - 2018',
     title: 'Intern Developer',
     company: 'Startup Inc.',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png',
+    logo: '/images/google-logo.png',
     description:
       'Worked on small projects and gained hands-on experience in development.',
   },
@@ -47,7 +47,7 @@ const careerData = [
     year: '2015 - 2018',
     title: 'Intern Developer',
     company: 'Startup Inc.',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png',
+    logo: '/images/google-logo.png',
     description:
       'Worked on small projects and gained hands-on experience in development.',
   },

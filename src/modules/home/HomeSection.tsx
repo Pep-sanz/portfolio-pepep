@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import Introduction from './Introduction';
-import ServicesList from './ServicesList';
+import Introduction from './components/Introduction';
+import ServicesList from './components/ServicesList';
 
 export default function HomeSection() {
   return (

@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import ProjectList from './ProjectsList';
+import ProjectList from './components/ProjectsList';
 
 export default function ProjectSection() {
   return (
