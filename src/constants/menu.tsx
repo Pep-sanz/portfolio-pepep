@@ -107,17 +107,17 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
   //     'bg-rose-700 hover:bg-rose-600 dark:bg-rose-400 dark:hover:bg-rose-300',
   //   classIcon: 'bg-rose-700 dark:bg-rose-500',
   // },
-  {
-    id: 'Discord',
-    title: 'Chat with the community',
-    description: 'Join over 1,000+ others developers on The Code Bayu Discord.',
-    href: 'https://discord.gg/76UFeGdXy6',
-    icon: <DiscordIcon className="text-xl md:text-3xl" />,
-    classContainer:
-      'border-purple-300 from-purple-100 to-purple-200 dark:border-purple-600 dark:from-purple-900 dark:to-purple-950',
-    classText: 'text-purple-600 dark:text-purple-400',
-    classLink:
-      'bg-purple-600 hover:bg-purple-500 dark:bg-purple-400 dark:hover:bg-purple-300',
-    classIcon: 'bg-purple-600 dark:bg-purple-500',
-  },
+  // {
+  //   id: 'Discord',
+  //   title: 'Chat with the community',
+  //   description: 'Join over 1,000+ others developers on The Code Bayu Discord.',
+  //   href: 'https://discord.gg/76UFeGdXy6',
+  //   icon: <DiscordIcon className="text-xl md:text-3xl" />,
+  //   classContainer:
+  //     'border-purple-300 from-purple-100 to-purple-200 dark:border-purple-600 dark:from-purple-900 dark:to-purple-950',
+  //   classText: 'text-purple-600 dark:text-purple-400',
+  //   classLink:
+  //     'bg-purple-600 hover:bg-purple-500 dark:bg-purple-400 dark:hover:bg-purple-300',
+  //   classIcon: 'bg-purple-600 dark:bg-purple-500',
+  // },
 ];

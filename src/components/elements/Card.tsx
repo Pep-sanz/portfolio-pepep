@@ -13,7 +13,6 @@ export function Card({ children, className = '', ...others }: CardProps) {
     <motion.div
       whileHover={{ scale: 0.98 }}
       transition={{ duration: 0.2, ease: 'easeIn' }}
-      data-testid="card"
       className={cn(
         'rounded-xl shadow-md transition-all duration-300 hover:shadow-none',
         className,

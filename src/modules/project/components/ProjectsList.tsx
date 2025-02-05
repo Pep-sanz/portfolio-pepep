@@ -1,11 +1,11 @@
 import SectionHeading from '@/components/elements/SectionHeading';
 import SectionSubHeading from '@/components/elements/SectionSubHeading';
 import React from 'react';
-import DownloadResume from '@/components/elements/DownloadResume';
+// import DownloadResume from '@/components/elements/DownloadResume';
 import { BiArchive } from 'react-icons/bi';
 import { motion } from 'framer-motion';
-import ProjectCard from './ProjectCard';
 import { projectItems } from '@/constants/dataProject';
+import ProjectCard from './ProjectCard';
 
 export default function ProjectList() {
   const fiteredProjects = projectItems.filter((project) => project?.is_show);
@@ -14,7 +14,7 @@ export default function ProjectList() {
     return 'no data';
   }
   return (
-    <div className="w-full gap-6 flex flex-col dark:bg-secondary bg-white rounded-md shadow-md p-6 md:p-12">
+    <div className="w-full gap-6 flex flex-col dark:bg-secondary bg-white rounded-md shadow-md p-3 md:p-6 lg:p-12">
       <div className="space-y-2">
         <SectionHeading
           title="Projects"
@@ -26,7 +26,7 @@ export default function ProjectList() {
           </p>
         </SectionSubHeading>
       </div>
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid w-full md:grid-cols-2 gap-6">
         {fiteredProjects.map((project, index) => (
           <motion.div
             key={index}

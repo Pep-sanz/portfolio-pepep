@@ -1,7 +1,5 @@
-'use client';
-
 import ProjectSection from '@/modules/project';
 
-export default function page() {
+export default async function page() {
   return <ProjectSection />;
 }

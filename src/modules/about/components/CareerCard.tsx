@@ -72,7 +72,7 @@ const CareerCard: React.FC = () => {
   return (
     <div className="w-full">
       <motion.div
-        className="gap-6 grid md:grid-cols-2 justify-items-center"
+        className="gap-6 grid xl:grid-cols-2 justify-items-center"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
@@ -80,7 +80,7 @@ const CareerCard: React.FC = () => {
         {careerData.map((item, index) => (
           <motion.div
             key={index}
-            className="w-full flex gap-6 p-4 border-l-4 border-blue-500 bg-gray-100 shadow-lg rounded-md"
+            className="w-full flex gap-6 p-4 bg-gray-100 dark:bg-primary shadow-lg rounded-md"
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.95 }}
@@ -93,12 +93,12 @@ const CareerCard: React.FC = () => {
               className="object-contain"
             />
             <div className="">
-              <h3 className="text-xl font-semibold">{item.title}</h3>
-              <p className="text-sm text-gray-600">{item.company}</p>
-              <span className="block text-blue-600 font-medium mb-2">
-                {item.year}
-              </span>
-              <p className="text-gray-700">{item.description}</p>
+              <h3 className="text-xl dark:text-neutral-200 font-semibold">
+                {item.title}
+              </h3>
+              <p className="text-sm">{item.company}</p>
+              <span className="block font-medium mb-2">{item.year}</span>
+              <p className="">{item.description}</p>
             </div>
           </motion.div>
         ))}
