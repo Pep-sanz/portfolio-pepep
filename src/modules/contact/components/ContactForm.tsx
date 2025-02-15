@@ -3,8 +3,8 @@
 import InputField from '@/components/elements/InputField';
 import SectionHeading from '@/components/elements/SectionHeading';
 import { Button } from '@/components/ui/button';
-import axios from 'axios';
-// import axios from 'axios'
+import { useToast } from '@/hooks/use-toast';
+import fetcher from '@/lib/fetcher';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -24,24 +24,21 @@ export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [buttonText, setButtonText] = useState('Send Email');
   const [isSuccess, setIsSuccess] = useState(false);
+  const { toast } = useToast();
   const regexEmail =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   async function handleFormSubmit(payload: IFormEmail) {
     setIsLoading(true);
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      const result = await response.json();
-
-      console.log(result);
-
+      const response = await fetcher.post('/api/send-email', { ...payload });
+      if (response.status === 200) {
+        setIsSuccess(true);
+        toast({
+          variant: 'success',
+          description: response.data.message,
+        });
+      }
       reset();
       setIsLoading(false);
     } catch (error) {

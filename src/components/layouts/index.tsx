@@ -4,6 +4,7 @@ import React, { ReactNode } from 'react';
 import Navbar from './navbar';
 import MobileHeader from './navbar/MobileHeader';
 import { usePathname } from 'next/navigation';
+import { Toaster } from '@/components/ui/toaster';
 
 export default function Layouts({ children }: { children: ReactNode }) {
   const pathName = usePathname();
@@ -20,6 +21,7 @@ export default function Layouts({ children }: { children: ReactNode }) {
       <main className="no-scrollbar h-full w-full scroll-smooth transition-all duration-300 lg:min-h-screen">
         {children}
       </main>
+      <Toaster />
     </div>
   );
 }
