@@ -6,7 +6,7 @@ const nextConfig = {
     domains: [
       'ap-south-1.linodeobjects.com',
       'media.licdn.com',
-      process.env.BASE_URL,
+      'portfolio-pepep.vercel.app',
     ],
   },
   // Konfigurasi lain di sini
