@@ -22,7 +22,7 @@ export default function Introduction() {
             </li>
           </ul>
         </div>
-        <p className="max-w-md">
+        <p className="max-w-lg">
           Passionate and seasoned Software Engineer with a strong focus on
           frontend development. Proficient in TypeScript and well-versed in all
           aspects of web technologies. Collaborative team player dedicated to

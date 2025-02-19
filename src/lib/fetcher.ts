@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const fetcher = axios.create({
-  baseURL: process.env.API_KEY,
+  baseURL: process.env.BASE_URL,
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',

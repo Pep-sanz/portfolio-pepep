@@ -11,6 +11,6 @@ export const servicesMock = [
     tag: 'Coding',
     title: 'Mobile Development',
     description:
-      'Implement Google Tag Manager, Google Analytics and Mixpanel for data-driven insights.',
+      'Create smooth and cross-platform mobile applications using React Native.',
   },
 ];
