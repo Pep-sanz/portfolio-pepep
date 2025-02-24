@@ -5,6 +5,7 @@ import { IProjectItem } from '@/types/projects';
 import { STACKS } from '@/constants/stacks';
 import ProjectLink from './ProjectLink';
 
+// projectDetail
 export default function ProjectDetail({
   title,
   image,
