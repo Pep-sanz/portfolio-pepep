@@ -18,7 +18,7 @@ export default function Introduction() {
             />
           </div>
           <ul className="ml-5 mt-2 flex list-disc flex-col gap-1 text-neutral-700 dark:text-neutral-400 lg:flex-row lg:gap-8">
-            <li>Remote worker</li>
+            <li>Remote worker/office workers</li>
             <li>
               Based in Bandung <span className="ml-1">🇮🇩</span>
             </li>
