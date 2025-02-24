@@ -44,7 +44,7 @@ export const projectItems: IProjectItem[] = [
     content:
       'A platform designed for bloggers to create, edit, and publish their content seamlessly.',
     is_show: true,
-    is_featured: false,
+    is_featured: true,
   },
   {
     id: 4,
@@ -59,7 +59,7 @@ export const projectItems: IProjectItem[] = [
     content:
       'This app enables real-time communication with support for group chats and multimedia messages.',
     is_show: true,
-    is_featured: false,
+    is_featured: true,
   },
   {
     id: 5,
