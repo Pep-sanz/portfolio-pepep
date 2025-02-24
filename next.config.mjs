@@ -9,7 +9,6 @@ const nextConfig = {
       'portfolio-pepep.vercel.app',
     ],
   },
-  // Konfigurasi lain di sini
 };
 
 export default nextConfig;
