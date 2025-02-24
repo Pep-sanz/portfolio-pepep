@@ -8,8 +8,8 @@ export const projectItems: IProjectItem[] = [
     description:
       'A digital platform designed to showcase professional portfolios in a modern and interactive way. With an elegant and responsive design, this application allows me to showcase my work experience, projects, skills, and achievements in one easily accessible place.',
     image: '/Images/portfolio.png',
-    link_demo: 'https://example.com/portfolio',
-    link_github: 'https://github.com/pep-sanz/jadwal-solat',
+    link_demo: 'https://portfolio-pepep.vercel.app/',
+    link_github: 'https://github.com/Pep-sanz/portfolio-pepep/',
     stacks: ['Next.js', 'TypeScript', 'TailwindCSS', 'Framer Motion'],
     content:
       'This project highlights my ability to create responsive and user-friendly designs with modern frameworks.',
@@ -23,9 +23,15 @@ export const projectItems: IProjectItem[] = [
     description:
       'A Learning Management System (LMS) platform designed to simplify the digital learning process for educational institutions, businesses, and professional training. With an intuitive interface and comprehensive features, this application allows users to manage courses, access learning materials, and track learning progress in one well-organized place.',
     image: '/Images/lms.png',
-    link_demo: 'https://example.com/ecommerce',
-    link_github: 'https://github.com/pep-sanz/jadwal-solat',
-    stacks: ['Next.js', 'Next UI', 'TailwindCSS', 'React Hook Form'],
+    link_demo: 'http://lms-porto.vercel.app/',
+    link_github: null, //'https://github.com/fadhilrachman/lms-porto'
+    stacks: [
+      'Next.js',
+      'TypeScript',
+      'Next UI',
+      'TailwindCSS',
+      'React Hook Form',
+    ],
     content:
       'An e-commerce application featuring dynamic product listings, cart management, and secure payment gateways.',
     is_show: true,
@@ -40,7 +46,14 @@ export const projectItems: IProjectItem[] = [
     image: '/Images/ecosytem-tree.jpeg',
     link_demo: null,
     link_github: null,
-    stacks: ['React.js', 'Ant Design', 'TailwindCSS', 'React Router', 'Vite'],
+    stacks: [
+      'React.js',
+      'TypeScript',
+      'Ant Design',
+      'TailwindCSS',
+      'React Router',
+      'Vite',
+    ],
     content:
       'A platform designed for bloggers to create, edit, and publish their content seamlessly.',
     is_show: true,
@@ -55,7 +68,14 @@ export const projectItems: IProjectItem[] = [
     image: '/Images/task-monitoring.png',
     link_demo: null,
     link_github: null,
-    stacks: ['React.js', 'Ant Design', 'TailwindCSS', 'React Router', 'Vite'],
+    stacks: [
+      'React.js',
+      'TypeScript',
+      'Ant Design',
+      'TailwindCSS',
+      'React Router',
+      'Vite',
+    ],
     content:
       'This app enables real-time communication with support for group chats and multimedia messages.',
     is_show: true,
