@@ -40,7 +40,7 @@ export default function Introduction() {
         </Button>
       </div>
       <Image
-        src={`/images/pepep-1.png`}
+        src={`/Images/pepep-1.png`}
         width={200}
         height={300}
         alt="pepep"

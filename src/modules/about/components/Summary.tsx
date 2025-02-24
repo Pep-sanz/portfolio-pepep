@@ -23,7 +23,7 @@ export default function Summary() {
       <div className="flex justify-between flex-col lg:flex-row gap-6">
         <div className="space-y-3 flex flex-col items-center h-fit">
           <Image
-            src="/images/pepep-1.png"
+            src="/Images/pepep-1.png"
             width={250}
             height={200}
             alt="profile"

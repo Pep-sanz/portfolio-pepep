@@ -7,7 +7,7 @@ export const projectItems: IProjectItem[] = [
     slug: 'portfolio-website',
     description:
       'A digital platform designed to showcase professional portfolios in a modern and interactive way. With an elegant and responsive design, this application allows me to showcase my work experience, projects, skills, and achievements in one easily accessible place.',
-    image: '/images/portfolio.png',
+    image: '/Images/portfolio.png',
     link_demo: 'https://example.com/portfolio',
     link_github: 'https://github.com/pep-sanz/jadwal-solat',
     stacks: ['Next.js', 'TypeScript', 'TailwindCSS', 'Framer Motion'],
@@ -22,7 +22,7 @@ export const projectItems: IProjectItem[] = [
     slug: 'ecommerce-app',
     description:
       'A Learning Management System (LMS) platform designed to simplify the digital learning process for educational institutions, businesses, and professional training. With an intuitive interface and comprehensive features, this application allows users to manage courses, access learning materials, and track learning progress in one well-organized place.',
-    image: '/images/lms.png',
+    image: '/Images/lms.png',
     link_demo: 'https://example.com/ecommerce',
     link_github: 'https://github.com/pep-sanz/jadwal-solat',
     stacks: ['Next.js', 'Next UI', 'TailwindCSS', 'React Hook Form'],
@@ -37,7 +37,7 @@ export const projectItems: IProjectItem[] = [
     slug: 'ecosystem-tree',
     description:
       "I participated in the development of the Ecosystem Tree CRM application with Arnatech to optimize the customer acquisition process for BRI Micro. This innovative platform helps BRI's marketing team manage referral pipelines and monitor follow-up actions effectively, ensuring seamless operations across various organizational levels.",
-    image: '/images/ecosytem-tree.jpeg',
+    image: '/Images/ecosytem-tree.jpeg',
     link_demo: null,
     link_github: null,
     stacks: ['React.js', 'Ant Design', 'TailwindCSS', 'React Router', 'Vite'],
@@ -52,7 +52,7 @@ export const projectItems: IProjectItem[] = [
     slug: 'Mikro-Unit-Task-Monitoring',
     description:
       'I had the privilege of serving as a Frontend Developer at Arnatech, where I contributed to developing a comprehensive task monitoring platform for BRI (Bank Rakyat Indonesia). This solution enables efficient management and tracking of daily tasks for BRI units, allowing for streamlined operations and improved performance monitoring across various organizational levels.',
-    image: '/images/task-monitoring.png',
+    image: '/Images/task-monitoring.png',
     link_demo: null,
     link_github: null,
     stacks: ['React.js', 'Ant Design', 'TailwindCSS', 'React Router', 'Vite'],
@@ -66,7 +66,7 @@ export const projectItems: IProjectItem[] = [
     title: 'Task Management Tool',
     slug: 'task-management-tool',
     description: 'A productivity tool for task tracking and collaboration.',
-    image: '/images/task.png',
+    image: '/Images/task.png',
     link_demo: 'https://example.com/task-tool',
     link_github: null,
     stacks: ['Vue.js', 'Pinia', 'Tailwind CSS'],
