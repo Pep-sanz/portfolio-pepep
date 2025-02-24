@@ -54,7 +54,7 @@ export const projectItems: IProjectItem[] = [
     image: '/Images/portfolio.png',
     link_demo: 'https://portfolio-pepep.vercel.app/',
     link_github: 'https://github.com/Pep-sanz/portfolio-pepep/',
-    stacks: ['Next.js', 'TypeScript', 'TailwindCSS', 'Framer Motion'],
+    stacks: ['Next.js', 'TypeScript', 'Shadcn', 'TailwindCSS', 'Framer Motion'],
     content:
       'This project highlights my ability to create responsive and user-friendly designs with modern frameworks.',
     is_show: true,

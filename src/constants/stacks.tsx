@@ -30,6 +30,7 @@ import {
   SiReacttable,
   SiRedux,
   SiSass,
+  SiShadcnui,
   SiStorybook,
   SiTailwindcss,
   SiTypescript,
@@ -76,6 +77,7 @@ export const STACKS: stacksProps = {
   'Node JS': <SiNodedotjs size={iconSize} className="text-green-600" />,
   Github: <SiGithub size={iconSize} />,
   // Storybook: <SiStorybook size={iconSize} className="text-pink-500" />,
+  Shadcn: <SiShadcnui size={iconSize} />,
   'React Router': <SiReactrouter size={iconSize} className="text-pink-500" />,
   'React Hook Form': (
     <SiReacthookform size={iconSize} className="text-pink-500" />
