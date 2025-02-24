@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={`${roboto.className} antialiased`}>
-        <NextTopLoader
+        {/* <NextTopLoader
           color="#05b6d3"
           initialPosition={0.08}
           crawlSpeed={200}
@@ -36,7 +36,7 @@ export default function RootLayout({
           easing="ease"
           speed={200}
           shadow="0 0 10px #05b6d3,0 0 5px #45c6c0"
-        />
+        /> */}
         <ThemeProviderContext
           defaultTheme="light"
           enableSystem
