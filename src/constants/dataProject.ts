@@ -2,42 +2,6 @@ import { IProjectItem } from '@/types/projects';
 
 export const projectItems: IProjectItem[] = [
   {
-    id: 1,
-    title: 'Portfolio Website',
-    slug: 'portfolio-website',
-    description:
-      'A digital platform designed to showcase professional portfolios in a modern and interactive way. With an elegant and responsive design, this application allows me to showcase my work experience, projects, skills, and achievements in one easily accessible place.',
-    image: '/Images/portfolio.png',
-    link_demo: 'https://portfolio-pepep.vercel.app/',
-    link_github: 'https://github.com/Pep-sanz/portfolio-pepep/',
-    stacks: ['Next.js', 'TypeScript', 'TailwindCSS', 'Framer Motion'],
-    content:
-      'This project highlights my ability to create responsive and user-friendly designs with modern frameworks.',
-    is_show: true,
-    is_featured: true,
-  },
-  {
-    id: 2,
-    title: 'Learning Management System',
-    slug: 'ecommerce-app',
-    description:
-      'A Learning Management System (LMS) platform designed to simplify the digital learning process for educational institutions, businesses, and professional training. With an intuitive interface and comprehensive features, this application allows users to manage courses, access learning materials, and track learning progress in one well-organized place.',
-    image: '/Images/lms.png',
-    link_demo: 'http://lms-porto.vercel.app/',
-    link_github: null, //'https://github.com/fadhilrachman/lms-porto'
-    stacks: [
-      'Next.js',
-      'TypeScript',
-      'Next UI',
-      'TailwindCSS',
-      'React Hook Form',
-    ],
-    content:
-      'An e-commerce application featuring dynamic product listings, cart management, and secure payment gateways.',
-    is_show: true,
-    is_featured: false,
-  },
-  {
     id: 3,
     title: 'Ecosystem Tree CRM Application for BRI (Bank Rakyat Indonesia)',
     slug: 'ecosystem-tree',
@@ -80,6 +44,42 @@ export const projectItems: IProjectItem[] = [
       'This app enables real-time communication with support for group chats and multimedia messages.',
     is_show: true,
     is_featured: true,
+  },
+  {
+    id: 1,
+    title: 'Portfolio Website',
+    slug: 'portfolio-website',
+    description:
+      'A digital platform designed to showcase professional portfolios in a modern and interactive way. With an elegant and responsive design, this application allows me to showcase my work experience, projects, skills, and achievements in one easily accessible place.',
+    image: '/Images/portfolio.png',
+    link_demo: 'https://portfolio-pepep.vercel.app/',
+    link_github: 'https://github.com/Pep-sanz/portfolio-pepep/',
+    stacks: ['Next.js', 'TypeScript', 'TailwindCSS', 'Framer Motion'],
+    content:
+      'This project highlights my ability to create responsive and user-friendly designs with modern frameworks.',
+    is_show: true,
+    is_featured: true,
+  },
+  {
+    id: 2,
+    title: 'Learning Management System',
+    slug: 'ecommerce-app',
+    description:
+      'A Learning Management System (LMS) platform designed to simplify the digital learning process for educational institutions, businesses, and professional training. With an intuitive interface and comprehensive features, this application allows users to manage courses, access learning materials, and track learning progress in one well-organized place.',
+    image: '/Images/lms.png',
+    link_demo: 'http://lms-porto.vercel.app/',
+    link_github: null, //'https://github.com/fadhilrachman/lms-porto'
+    stacks: [
+      'Next.js',
+      'TypeScript',
+      'Next UI',
+      'TailwindCSS',
+      'React Hook Form',
+    ],
+    content:
+      'An e-commerce application featuring dynamic product listings, cart management, and secure payment gateways.',
+    is_show: true,
+    is_featured: false,
   },
   {
     id: 5,
