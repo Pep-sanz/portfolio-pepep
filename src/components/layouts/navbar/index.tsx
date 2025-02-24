@@ -4,8 +4,10 @@ import NavItems from './NavItems';
 import { Button } from '@/components/ui/button';
 import ToggleThemeIcon from '@/components/elements/ToggleThemeIcon';
 import { FiPlusCircle } from 'react-icons/fi';
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
+  const router = useRouter();
   const filtered = MENU_ITEMS.filter((item) => item.isShow);
 
   return (
@@ -17,7 +19,7 @@ export default function Navbar() {
       </div>
       <div className="space-x-6 flex justify-center items-center">
         <ToggleThemeIcon />
-        <Button>
+        <Button onClick={() => router.push('/contact')}>
           <p>Hire Me</p>
           <FiPlusCircle />
         </Button>

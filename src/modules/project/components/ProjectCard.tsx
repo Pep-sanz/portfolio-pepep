@@ -29,8 +29,8 @@ export default function ProjectCard({
           </div>
         )}
         <Image
-          src={'/image/pepep-1.png'}
-          width={400}
+          src={image}
+          width={600}
           height={200}
           alt={title}
           className="h-48 rounded-t-xl object-cover object-left"

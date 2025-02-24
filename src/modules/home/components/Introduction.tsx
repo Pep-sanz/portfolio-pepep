@@ -1,10 +1,12 @@
 import Image from '@/components/elements/Image';
 import TypeAnimation from '@/components/elements/TypeAnimation';
 import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
 export default function Introduction() {
+  const router = useRouter();
   return (
     <div className="w-full flex justify-between flex-col md:flex-row items-center gap-6 dark:bg-secondary bg-white rounded-md shadow-md p-6 md:p-12">
       <div className="space-y-6 ">
@@ -29,7 +31,10 @@ export default function Introduction() {
           delivering efficient, scalable, and visually appealing web
           applications.
         </p>
-        <Button className="w-fit space-x-3">
+        <Button
+          onClick={() => router.push('/about')}
+          className="w-fit space-x-3"
+        >
           <p>About Me</p>
           <FaArrowRight />
         </Button>

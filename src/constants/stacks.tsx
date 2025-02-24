@@ -1,6 +1,7 @@
 import { BiLogoPostgresql } from 'react-icons/bi';
 import { BsFillBootstrapFill } from 'react-icons/bs';
 import {
+  SiAntdesign,
   SiAstro,
   SiChakraui,
   SiCss3,
@@ -17,6 +18,7 @@ import {
   SiJson,
   SiMui,
   SiNextdotjs,
+  SiNextui,
   SiNodedotjs,
   SiNuxtdotjs,
   SiPhp,
@@ -56,8 +58,8 @@ export const STACKS: stacksProps = {
   Vite: <SiVite size={iconSize} className="text-purple-500" />,
   // PostgreSql: <BiLogoPostgresql size={iconSize} className="text-blue-400" />,
   ChakraUI: <SiChakraui size={iconSize} className="text-teal-500" />,
-  'React Native': <SiReact size={iconSize} className="text-sky-600" />,
-  Expo: <SiExpo size={iconSize} />,
+  // 'React Native': <SiReact size={iconSize} className="text-sky-600" />,
+  // Expo: <SiExpo size={iconSize} />,
   SASS: <SiSass size={iconSize} className="text-pink-600" />,
   // Gulp: <SiGulp size={iconSize} className="text-red-500" />,
   Firebase: <SiFirebase size={iconSize} className="text-yellow-500" />,
@@ -81,4 +83,6 @@ export const STACKS: stacksProps = {
   'React Table': <SiReacttable size={iconSize} className="text-rose-600" />,
   // Astro: <SiAstro className="text-purple-500" />,
   Json: <SiJson className="text-neutral-700" />,
+  'Next UI': <SiNextui size={iconSize} />,
+  'Ant Design': <SiAntdesign className="text-blue-400" size={iconSize} />,
 };
