@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const careerData = [
   {
-    year: '09/2024 - Present',
+    year: '09/2024 - 03/2025',
     title: 'Frontend Developer',
     company: 'PT Arna Teknologi Peduli',
     companyProfile: 'https://arnatech.id/',
@@ -23,7 +23,7 @@ const careerData = [
       'Developed web applications and collaborated with cross-functional teams.',
   },
   {
-    year: ' 02/2024 - 06/2024',
+    year: ' 02/2024 - 07/2024',
     title: 'Frontend Developer',
     company: 'PT. Elang System Solusi Indonesia',
     companyProfile: 'https://www.ezzi.co.id/',
