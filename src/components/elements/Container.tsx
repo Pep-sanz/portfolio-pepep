@@ -12,15 +12,14 @@ interface ContainerProps {
 export default function Container({
   children,
   className = '',
-  withMarginTop = true,
+  withMarginTop = false,
   ...others
 }: ContainerProps) {
   return (
     <div
-      data-testid="container"
-      className={`mb-10 ${
+      className={` px-3 py-6 ${
         withMarginTop && 'sm:mt-20 md:mt-24'
-      } p-4 md:p-8 lg:pr-0 ${className}`}
+      } ${className}`}
       {...others}
     >
       {children}

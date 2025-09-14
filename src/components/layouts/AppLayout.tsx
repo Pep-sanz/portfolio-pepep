@@ -2,11 +2,11 @@
 
 import React, { ReactNode } from 'react';
 import Navbar from './navbar';
-import MobileHeader from './navbar/MobileHeader';
 import { usePathname } from 'next/navigation';
 import { Toaster } from '@/components/ui/toaster';
+import MobileHeader from './navbar/MobileHeader';
 
-export default function Layouts({ children }: { children: ReactNode }) {
+export default function AppLayout({ children }: { children: ReactNode }) {
   const pathName = usePathname();
 
   const hideSidebar = ['/me', '/test'].includes(pathName);
