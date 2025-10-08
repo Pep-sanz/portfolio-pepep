@@ -23,10 +23,11 @@ export default function Summary() {
       <div className="flex justify-between flex-col lg:flex-row gap-6">
         <div className="space-y-3 flex flex-col items-center h-fit">
           <Image
-            src="/Images/pepep-1.png"
+            src="/Images/pepep-profile.jpg"
             width={250}
             height={200}
             alt="profile"
+            className="rounded-md"
           />
           <div className="flex flex-col justify-center items-center">
             <div className="mt-1 flex items-center gap-2">

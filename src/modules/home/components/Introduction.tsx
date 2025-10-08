@@ -1,15 +1,18 @@
 import Image from '@/components/elements/Image';
 import TypeAnimation from '@/components/elements/TypeAnimation';
 import { Button } from '@/components/ui/button';
+import { HomeDataTypes } from '@/modules/admin/home/HomeContainer';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
-export default function Introduction() {
+export default function Introduction({ data }: { data: HomeDataTypes }) {
   const router = useRouter();
+  console.log(data);
+
   return (
     <div className="w-full flex justify-between flex-col md:flex-row items-center gap-6 dark:bg-secondary bg-white rounded-md shadow-md p-6 md:p-12">
-      <div className="space-y-6 ">
+      <div className="space-y-6 order-2 md:!order-1 ">
         <div className="space-y-3">
           <div className="font-sora dark:text-neutral-100 flex gap-2 text-2xl font-bold lg:text-3xl">
             <TypeAnimation
@@ -18,9 +21,9 @@ export default function Introduction() {
             />
           </div>
           <ul className="ml-5 mt-2 flex list-disc flex-col gap-1 text-neutral-700 dark:text-neutral-400 lg:flex-row lg:gap-8">
-            <li>Remote worker/office workers</li>
+            <li>Remote/Office Workers</li>
             <li>
-              Based in Bandung <span className="ml-1">🇮🇩</span>
+              Based in {data?.address} <span className="ml-1">🇮🇩</span>
             </li>
           </ul>
         </div>
@@ -39,13 +42,15 @@ export default function Introduction() {
           <FaArrowRight />
         </Button>
       </div>
-      <Image
-        src={`/Images/pepep-1.png`}
-        width={200}
-        height={300}
-        alt="pepep"
-        // className="order-1 md:order-2"
-      />
+      <div className="md:!order-2 order-1">
+        <Image
+          src={`/Images/pepep-profile.jpg`}
+          width={250}
+          height={300}
+          alt="pepep"
+          className=" rounded-lg"
+        />
+      </div>
       {/*<div className="">
         <div className="flex justify-start md:justify-between items-center md:items-end flex-col order-1 sm:order-2">
          <div className="flex items-center text-neutral-400 space-x-4">

@@ -7,7 +7,7 @@ import {
   BiArchive as ProjectIcon,
 } from 'react-icons/bi';
 import {
-  BsDiscord as DiscordIcon,
+  // BsDiscord as DiscordIcon,
   BsGithub as GithubIcon,
   BsLinkedin as LinkedinIcon,
 } from 'react-icons/bs';
@@ -18,7 +18,7 @@ const iconSize = 26;
 export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Home',
-    href: '/',
+    href: '/home',
     icon: <HomeIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
@@ -63,6 +63,57 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Dashboard',
+  },
+];
+
+export const DASHBOARD_ITEMS: MenuItemProps[] = [
+  {
+    title: 'Dashboard',
+    href: '/admin/dashboard',
+    icon: <DashboardIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Dashboard',
+  },
+  {
+    title: 'Home',
+    href: '/admin/home',
+    icon: <HomeIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Home',
+  },
+  {
+    title: 'About',
+    href: '/admin/about',
+    icon: <ProfileIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: About',
+  },
+  {
+    title: 'Projects',
+    href: '/admin/projects',
+    icon: <ProjectIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Projects',
+  },
+  {
+    title: 'Task Board',
+    href: '/board',
+    icon: <LuTrello size={iconSize} />,
+    isShow: false,
+    isExternal: false,
+    eventName: 'Pages: Task Board',
+  },
+  {
+    title: 'Contact',
+    href: '/contact',
+    icon: <ContactIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Contact',
   },
 ];
 

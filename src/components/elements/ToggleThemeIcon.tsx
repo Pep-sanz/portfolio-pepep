@@ -6,7 +6,7 @@ import { useTheme } from 'next-themes';
 import React from 'react';
 import { BsCloudMoon, BsCloudSun } from 'react-icons/bs';
 
-export default function ToggleThemeIcon() {
+export default function ToggleThemeIcon({ size }: { size?: number }) {
   const { setTheme, resolvedTheme } = useTheme();
   const mounted = useHasMounted();
 
@@ -26,9 +26,9 @@ export default function ToggleThemeIcon() {
       transition={{ duration: 0.5, delay: 0.5 }}
     >
       {resolvedTheme === 'light' ? (
-        <BsCloudSun size={26} />
+        <BsCloudSun size={size || 26} />
       ) : (
-        <BsCloudMoon size={26} />
+        <BsCloudMoon size={size || 26} />
       )}
     </motion.button>
   );
