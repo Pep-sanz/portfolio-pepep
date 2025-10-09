@@ -1,6 +1,6 @@
-import { supabase } from '@/lib/supabase/client';
-import { IProjectItem } from '@/types/projects';
-import { create } from 'zustand';
+import { supabase } from "@/lib/supabase/client";
+import { IProjectItem } from "@/types/projects";
+import { create } from "zustand";
 
 interface ProjectsStoreType {
   data: IProjectItem[];
@@ -16,18 +16,32 @@ export const useProjectStore = create<ProjectsStoreType>((set) => ({
   getData: async () => {
     try {
       set({ isLoading: true });
-      const { data, error } = await supabase.from('projects').select('*');
+      const { data, error } = await supabase.from("projects").select("*");
 
-      if (error && error.code !== 'PGRST116') {
+      if (error && error.code !== "PGRST116") {
         set({ isLoading: false });
 
-        throw new Error('Gagal mengambil data');
+        throw new Error("Gagal mengambil data");
       }
 
       set({ data, isLoading: false });
     } catch (err: any) {
       console.log(err);
       set({ isError: true });
+    }
+  },
+  deleteData: async (id: string) => {
+    try {
+      set({ isLoading: true });
+      const { error } = await supabase.from("projects").delete().eq("id", id);
+      if (error) {
+        set({ isLoading: false });
+        throw new Error("Vaild remove project");
+      }
+      set({ isLoading: false, isError: false });
+    } catch (err: any) {
+      console.log(err);
+      set({ isError: false });
     }
   },
 }));

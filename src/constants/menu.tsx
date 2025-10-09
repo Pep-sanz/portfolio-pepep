@@ -1,149 +1,149 @@
-import { MenuItemProps, SocialMedia } from '@/types/menu';
+import { MenuItemProps, SocialMedia } from "@/types/menu";
 import {
   BiPaperPlane as ContactIcon,
   BiCategoryAlt as DashboardIcon,
   BiHomeSmile as HomeIcon,
   BiLeaf as ProfileIcon,
   BiArchive as ProjectIcon,
-} from 'react-icons/bi';
+} from "react-icons/bi";
 import {
   // BsDiscord as DiscordIcon,
   BsGithub as GithubIcon,
   BsLinkedin as LinkedinIcon,
-} from 'react-icons/bs';
-import { LuTrello } from 'react-icons/lu';
+} from "react-icons/bs";
+import { LuTrello } from "react-icons/lu";
 
 const iconSize = 26;
 
 export const MENU_ITEMS: MenuItemProps[] = [
   {
-    title: 'Home',
-    href: '/home',
+    title: "Home",
+    href: "/",
     icon: <HomeIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Home',
+    eventName: "Pages: Home",
   },
   {
-    title: 'About',
-    href: '/about',
+    title: "About",
+    href: "/about",
     icon: <ProfileIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: About',
+    eventName: "Pages: About",
   },
   {
-    title: 'Projects',
-    href: '/projects',
+    title: "Projects",
+    href: "/projects",
     icon: <ProjectIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Projects',
+    eventName: "Pages: Projects",
   },
   {
-    title: 'Task Board',
-    href: '/board',
+    title: "Task Board",
+    href: "/board",
     icon: <LuTrello size={iconSize} />,
     isShow: false,
     isExternal: false,
-    eventName: 'Pages: Task Board',
+    eventName: "Pages: Task Board",
   },
   {
-    title: 'Contact',
-    href: '/contact',
+    title: "Contact",
+    href: "/contact",
     icon: <ContactIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Contact',
+    eventName: "Pages: Contact",
   },
   {
-    title: 'Dashboard',
-    href: '/dashboard',
+    title: "Dashboard",
+    href: "/dashboard",
     icon: <DashboardIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Dashboard',
+    eventName: "Pages: Dashboard",
   },
 ];
 
 export const DASHBOARD_ITEMS: MenuItemProps[] = [
   {
-    title: 'Dashboard',
-    href: '/admin/dashboard',
+    title: "Dashboard",
+    href: "/admin/dashboard",
     icon: <DashboardIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Dashboard',
+    eventName: "Pages: Dashboard",
   },
   {
-    title: 'Home',
-    href: '/admin/home',
+    title: "Home",
+    href: "/admin/home",
     icon: <HomeIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Home',
+    eventName: "Pages: Home",
   },
   {
-    title: 'About',
-    href: '/admin/about',
+    title: "About",
+    href: "/admin/about",
     icon: <ProfileIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: About',
+    eventName: "Pages: About",
   },
   {
-    title: 'Projects',
-    href: '/admin/projects',
+    title: "Projects",
+    href: "/admin/projects",
     icon: <ProjectIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Projects',
+    eventName: "Pages: Projects",
   },
   {
-    title: 'Task Board',
-    href: '/board',
+    title: "Task Board",
+    href: "/board",
     icon: <LuTrello size={iconSize} />,
     isShow: false,
     isExternal: false,
-    eventName: 'Pages: Task Board',
+    eventName: "Pages: Task Board",
   },
   {
-    title: 'Contact',
-    href: '/contact',
+    title: "Contact",
+    href: "/contact",
     icon: <ContactIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Contact',
+    eventName: "Pages: Contact",
   },
 ];
 
 export const SOCIAL_MEDIA: SocialMedia[] = [
   {
-    id: 'GitHub',
-    title: 'Explore the code',
-    description: 'Explore the source code for all my projects on GitHub.',
-    href: 'https://github.com/Pep-sanz',
+    id: "GitHub",
+    title: "Explore the code",
+    description: "Explore the source code for all my projects on GitHub.",
+    href: "https://github.com/Pep-sanz",
     icon: <GithubIcon className="text-xl md:text-3xl" />,
     classContainer:
-      'border-slate-300 from-slate-100 to-slate-200 dark:border-slate-600 dark:from-slate-900 dark:to-slate-950',
-    classText: 'text-slate-800 dark:text-slate-400',
+      "border-slate-300 from-slate-100 to-slate-200 dark:border-slate-600 dark:from-slate-900 dark:to-slate-950",
+    classText: "text-slate-800 dark:text-slate-400",
     classLink:
-      'bg-slate-800 hover:bg-slate-700 dark:bg-slate-400 dark:hover:bg-slate-300',
-    classIcon: 'bg-slate-800 dark:bg-slate-500',
+      "bg-slate-800 hover:bg-slate-700 dark:bg-slate-400 dark:hover:bg-slate-300",
+    classIcon: "bg-slate-800 dark:bg-slate-500",
   },
   {
-    id: 'Linkedin',
-    title: 'Let`s connect',
+    id: "Linkedin",
+    title: "Let`s connect",
     description:
-      'Connect for collaboration or explore my professional experience.',
-    href: 'https://www.linkedin.com/in/pepep-saepul-rohman/',
+      "Connect for collaboration or explore my professional experience.",
+    href: "https://www.linkedin.com/in/pepep-saepul-rohman/",
     icon: <LinkedinIcon className="text-xl md:text-3xl" />,
     classContainer:
-      'border-blue-300 from-blue-100 to-blue-200 dark:border-blue-600 dark:from-blue-900 dark:to-blue-950',
-    classText: 'text-blue-600 dark:text-blue-400',
+      "border-blue-300 from-blue-100 to-blue-200 dark:border-blue-600 dark:from-blue-900 dark:to-blue-950",
+    classText: "text-blue-600 dark:text-blue-400",
     classLink:
-      'bg-blue-600 hover:bg-blue-500 dark:bg-blue-400 dark:hover:bg-blue-300',
-    classIcon: 'bg-blue-600 dark:bg-blue-500',
+      "bg-blue-600 hover:bg-blue-500 dark:bg-blue-400 dark:hover:bg-blue-300",
+    classIcon: "bg-blue-600 dark:bg-blue-500",
   },
   // {
   //   id: 'NPM',

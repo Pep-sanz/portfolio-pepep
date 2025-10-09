@@ -1,3 +1,5 @@
+"use client";
+
 import SectionHeading from "@/components/elements/SectionHeading";
 import SectionSubHeading from "@/components/elements/SectionSubHeading";
 import React, { useEffect } from "react";
@@ -9,7 +11,7 @@ import { motion } from "framer-motion";
 import ProjectCard from "@/modules/project/components/ProjectCard";
 import { useProjectStore } from "@/stores/projects.sotre";
 
-export default function ProjectList() {
+export default function ProjectContainer() {
   // const { toast } = useToast();
   const { data, getData } = useProjectStore();
   const fiteredProjects = data?.filter((project) => project?.is_show);
