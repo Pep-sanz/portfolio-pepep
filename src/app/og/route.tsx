@@ -1,13 +1,11 @@
-// src/app/og/route.ts
 import { ImageResponse } from "next/og";
 import { SITE } from "@/lib/seo.config";
 
 export const runtime = "edge";
 export const alt = SITE.name;
 export const contentType = "image/png";
-export const size = { width: 1200, height: 630 };
 
-export async function GET(request: Request) {
+export async function GET(request: Request): Promise<ImageResponse> {
   const { searchParams } = new URL(request.url);
   const title = searchParams.get("title") || SITE.name;
   const subtitle = searchParams.get("subtitle") || SITE.description;
@@ -37,7 +35,10 @@ export async function GET(request: Request) {
           {SITE.url.replace(/^https?:\/\//, "")}
         </div>
       </div>
-    ),
-    { ...size }
+    ) as unknown as React.ReactElement, // 👈 trick untuk fix TypeScript inference
+    {
+      width: 1200,
+      height: 630,
+    }
   );
 }
