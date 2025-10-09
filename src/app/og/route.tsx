@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
 import { SITE } from "@/lib/seo.config";
 
-// ✅ Hanya export runtime
 export const runtime = "edge";
 
 export async function GET(request: Request) {
