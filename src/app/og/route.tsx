@@ -1,11 +1,10 @@
 import { ImageResponse } from "next/og";
 import { SITE } from "@/lib/seo.config";
 
+// ✅ Hanya export runtime
 export const runtime = "edge";
-export const alt = SITE.name;
-export const contentType = "image/png";
 
-export async function GET(request: Request): Promise<ImageResponse> {
+export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const title = searchParams.get("title") || SITE.name;
   const subtitle = searchParams.get("subtitle") || SITE.description;
@@ -23,6 +22,7 @@ export async function GET(request: Request): Promise<ImageResponse> {
           background:
             "linear-gradient(135deg, #0ea5e9 0%, #1f2937 60%, #111827 100%)",
           color: "white",
+          fontFamily: "Inter, sans-serif",
         }}
       >
         <div style={{ fontSize: 56, fontWeight: 800, lineHeight: 1.1 }}>
@@ -32,13 +32,17 @@ export async function GET(request: Request): Promise<ImageResponse> {
           {subtitle}
         </div>
         <div style={{ marginTop: 32, fontSize: 20, opacity: 0.8 }}>
-          {SITE.url.replace(/^https?:\/\//, "")}
+          {SITE.domain}
         </div>
       </div>
-    ) as unknown as React.ReactElement, // 👈 trick untuk fix TypeScript inference
+    ),
     {
       width: 1200,
       height: 630,
+      headers: {
+        "Content-Type": "image/png",
+        "Cache-Control": "public, max-age=31536000, immutable",
+      },
     }
   );
 }
