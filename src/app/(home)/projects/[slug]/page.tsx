@@ -1,8 +1,8 @@
-import BackButton from '@/components/elements/BackButton';
+import BackButton from "@/components/elements/BackButton";
 // import Container from '@/components/elements/Container';
-import { projectItems } from '@/constants/dataProject';
-import PageHeading from '@/components/elements/PageHeading';
-import ProjectDetail from '@/modules/project/components/ProjectDetail';
+import { projectItems } from "@/constants/dataProject";
+import PageHeading from "@/components/elements/PageHeading";
+import ProjectDetail from "@/modules/project/components/ProjectDetail";
 // import { IProjectItem } from '@/types/projects';
 
 // interface ProjectsDetailPageProps {
@@ -12,7 +12,7 @@ import ProjectDetail from '@/modules/project/components/ProjectDetail';
 export default async function ProjectDetailPage({ params }) {
   const slug = params?.slug;
   const detail = projectItems.find((item) => item.slug === slug);
-  console.log(slug, params);
+
   return (
     <div data-aos="fade-left" className="space-y-12 container md:max-w-[80vw] ">
       <section className="flex flex-col w-full dark:bg-secondary bg-white rounded-md shadow-md p-6 md:p-12">

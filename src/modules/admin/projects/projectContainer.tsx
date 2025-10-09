@@ -1,24 +1,25 @@
-import SectionHeading from '@/components/elements/SectionHeading';
-import SectionSubHeading from '@/components/elements/SectionSubHeading';
-import React, { useEffect, useState } from 'react';
+import SectionHeading from "@/components/elements/SectionHeading";
+import SectionSubHeading from "@/components/elements/SectionSubHeading";
+import React, { useEffect } from "react";
 // import DownloadResume from '@/components/elements/DownloadResume';
-import { BiArchive } from 'react-icons/bi';
-import { motion } from 'framer-motion';
-import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/lib/supabase/client';
-import ProjectCard from '@/modules/project/components/ProjectCard';
+import { BiArchive } from "react-icons/bi";
+import { motion } from "framer-motion";
+// import { useToast } from "@/hooks/use-toast";
+// import { supabase } from "@/lib/supabase/client";
+import ProjectCard from "@/modules/project/components/ProjectCard";
+import { useProjectStore } from "@/stores/projects.sotre";
 
 export default function ProjectList() {
-  const { toast } = useToast();
-  const [data, setData] = useState([]);
+  // const { toast } = useToast();
+  const { data, getData } = useProjectStore();
   const fiteredProjects = data?.filter((project) => project?.is_show);
 
   useEffect(() => {
-    getDataProject();
+    getData();
   }, []);
 
   if (fiteredProjects.length === 0) {
-    return 'no data';
+    return "no data";
   }
 
   return (

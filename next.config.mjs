@@ -4,9 +4,10 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
-      'ap-south-1.linodeobjects.com',
-      'media.licdn.com',
-      'portfolio-pepep.vercel.app',
+      "ap-south-1.linodeobjects.com",
+      "media.licdn.com",
+      "portfolio-pepep.vercel.app",
+      "gyxbijjnevrsodrxeznj.supabase.co",
     ],
   },
 };
