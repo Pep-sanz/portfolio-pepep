@@ -102,7 +102,7 @@ export const projectItems: IProjectItem[] = [
     description:
       "HCMS (Human Capital Management System) is an integrated human resource management application designed to help companies manage the entire employee life cycle — from the recruitment process to performance management and personnel administration. Here I had the opportunity to participate in the development of this application when I worked at the Secala by Meternet company. role as a Frontend developer whose task is to ensure the appearance and integration with the Backend team.",
     image: "/Images/hcms-admin-dashboard.png",
-    link_demo: "https://example.com/task-tool",
+    link_demo: null, //"https://example.com/task-tool",
     link_github: null,
     stacks: [
       "Next.js",
