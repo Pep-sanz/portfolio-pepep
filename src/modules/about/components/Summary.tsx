@@ -1,12 +1,12 @@
-import SectionHeading from '@/components/elements/SectionHeading';
-import SectionSubHeading from '@/components/elements/SectionSubHeading';
-import Tooltip from '@/components/elements/Tooltip';
-import { summaryMock } from '@/constants/summary';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-import { BiLeaf } from 'react-icons/bi';
-import { MdVerified as VerifiedIcon } from 'react-icons/md';
+import SectionHeading from "@/components/elements/SectionHeading";
+import SectionSubHeading from "@/components/elements/SectionSubHeading";
+import Tooltip from "@/components/elements/Tooltip";
+import { summaryMock } from "@/constants/summary";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { BiLeaf } from "react-icons/bi";
+import { MdVerified as VerifiedIcon } from "react-icons/md";
 
 export default function Summary() {
   return (
@@ -27,6 +27,7 @@ export default function Summary() {
             width={250}
             height={200}
             alt="profile"
+            className="rounded-lg"
           />
           <div className="flex flex-col justify-center items-center">
             <div className="mt-1 flex items-center gap-2">

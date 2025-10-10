@@ -1,9 +1,9 @@
-import Image from '@/components/elements/Image';
-import TypeAnimation from '@/components/elements/TypeAnimation';
-import { Button } from '@/components/ui/button';
-import { useRouter } from 'next/navigation';
-import React from 'react';
-import { FaArrowRight } from 'react-icons/fa';
+import Image from "@/components/elements/Image";
+import TypeAnimation from "@/components/elements/TypeAnimation";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+import React from "react";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Introduction() {
   const router = useRouter();
@@ -18,7 +18,7 @@ export default function Introduction() {
             />
           </div>
           <ul className="ml-5 mt-2 flex list-disc flex-col gap-1 text-neutral-700 dark:text-neutral-400 lg:flex-row lg:gap-8">
-            <li>Remote worker/office workers</li>
+            <li>Remote/office workers</li>
             <li>
               Based in Bandung <span className="ml-1">🇮🇩</span>
             </li>
@@ -32,7 +32,7 @@ export default function Introduction() {
           applications.
         </p>
         <Button
-          onClick={() => router.push('/about')}
+          onClick={() => router.push("/about")}
           className="w-fit space-x-3"
         >
           <p>About Me</p>
@@ -40,11 +40,11 @@ export default function Introduction() {
         </Button>
       </div>
       <Image
-        src={`/Images/pepep-1.png`}
+        src={`/Images/pepep-2.png`}
         width={200}
         height={300}
         alt="pepep"
-        // className="order-1 md:order-2"
+        className="rounded-lg"
       />
       {/*<div className="">
         <div className="flex justify-start md:justify-between items-center md:items-end flex-col order-1 sm:order-2">

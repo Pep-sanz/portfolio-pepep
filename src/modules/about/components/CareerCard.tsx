@@ -1,35 +1,44 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 const careerData = [
   {
-    year: '09/2024 - 03/2025',
-    title: 'Frontend Developer',
-    company: 'PT Arna Teknologi Peduli',
-    companyProfile: 'https://arnatech.id/',
-    logo: 'https://media.licdn.com/dms/image/v2/D560BAQHeFmwmc1Do8A/company-logo_200_200/company-logo_200_200/0/1705456038957/arnatech_logo?e=1747872000&v=beta&t=DSSdLEIwuG9swYJh-0he4lRveayL1lrsERo6Qaukn94',
+    year: "07/2024 - 03/2025",
+    title: "Frontend Developer",
+    company: "Scala by Meteranet",
+    companyProfile: "https://scala.co.id",
+    logo: "/Images/scala-logo.png",
     description:
-      'Developed web applications and collaborated with cross-functional teams.',
+      "Developed web applications and collaborated with cross-functional teams.",
   },
   {
-    year: '07/2024 - 08/2024',
-    title: 'Frontend Developer(Freelance)',
-    company: 'PT Arna Teknologi Peduli',
-    companyProfile: 'https://arnatech.id/',
-    logo: 'https://media.licdn.com/dms/image/v2/D560BAQHeFmwmc1Do8A/company-logo_200_200/company-logo_200_200/0/1705456038957/arnatech_logo?e=1747872000&v=beta&t=DSSdLEIwuG9swYJh-0he4lRveayL1lrsERo6Qaukn94',
+    year: "07/2024 - 03/2025",
+    title: "Frontend Developer",
+    company: "PT Arna Teknologi Peduli",
+    companyProfile: "https://arnatech.id/",
+    logo: "/Images/arnatech_logo.jpeg",
     description:
-      'Developed web applications and collaborated with cross-functional teams.',
+      "Developed web applications and collaborated with cross-functional teams.",
   },
+  // {
+  //   year: "07/2024 - 08/2024",
+  //   title: "Frontend Developer(Freelance)",
+  //   company: "PT Arna Teknologi Peduli",
+  //   companyProfile: "https://arnatech.id/",
+  //   logo: "https://media.licdn.com/dms/image/v2/D560BAQHeFmwmc1Do8A/company-logo_100_100/company-logo_100_100/0/1705456038957/arnatech_logo?e=1762992000&v=beta&t=W2WhZALZ3Qv0cri51O6aL6Fa8tU_urNcOq6uVk1580g",
+  //   description:
+  //     "Developed web applications and collaborated with cross-functional teams.",
+  // },
   {
-    year: ' 02/2024 - 07/2024',
-    title: 'Frontend Developer',
-    company: 'PT. Elang System Solusi Indonesia',
-    companyProfile: 'https://www.ezzi.co.id/',
-    logo: 'https://media.licdn.com/dms/image/v2/D560BAQFK3vioSVnZWg/company-logo_200_200/company-logo_200_200/0/1707203909195?e=1747872000&v=beta&t=bKZsDnn_ZL96j0MA90MKMlF_8kizZ6F1VurPJpVTTDw',
+    year: " 02/2024 - 07/2024",
+    title: "Frontend Developer",
+    company: "PT. Elang System Solusi Indonesia",
+    companyProfile: "https://www.ezzi.co.id/",
+    logo: "/Images/ezzi-logo.jpeg",
     description:
-      'Assisted in building scalable front-end features and maintained codebases.',
+      "Assisted in building scalable front-end features and maintained codebases.",
   },
 ];
 
