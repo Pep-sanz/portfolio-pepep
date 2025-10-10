@@ -6,6 +6,7 @@ import { ThemeProviderContext } from "@/lib/themeProviderContext";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { SITE } from "@/lib/seo.config";
+import Layouts from "@/components/layouts";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -76,7 +77,9 @@ export default function RootLayout({
           enableSystem
           attribute={"class"}
         >
-          <Suspense fallback={<Loading />}>{children}</Suspense>
+          <Layouts>
+            <Suspense fallback={<Loading />}>{children}</Suspense>
+          </Layouts>
         </ThemeProviderContext>
       </body>
     </html>
