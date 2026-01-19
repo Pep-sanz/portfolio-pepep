@@ -25,11 +25,12 @@ export default function Introduction() {
           </ul>
         </div>
         <p className="max-w-lg">
-          Passionate and seasoned Software Engineer with a strong focus on
-          frontend development. Proficient in TypeScript and well-versed in all
-          aspects of web technologies. Collaborative team player dedicated to
-          delivering efficient, scalable, and visually appealing web
-          applications.
+          I am a software engineer specializing in frontend development for both
+          mobile and web platforms. I focus on building fast, responsive, and
+          user-centered interfaces using modern frameworks and best UI/UX
+          practices. With strong problem-solving skills and attention to detail,
+          I aim to deliver clean, intuitive, and scalable products that are easy
+          to maintain.
         </p>
         <Button
           onClick={() => router.push("/about")}
