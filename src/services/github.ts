@@ -2,8 +2,8 @@ import {
   GITHUB_ACCOUNTS,
   GITHUB_API_BASE_URL,
   GITHUB_USER_QUERY,
-} from '@/constants/github';
-import axios from 'axios';
+} from "@/constants/github";
+import axios from "axios";
 
 export async function getGithubData() {
   const response = await axios.post(
@@ -20,5 +20,6 @@ export async function getGithubData() {
       },
     },
   );
+  console.log(response.data.data);
   return response.data?.data.user.contributionsCollection.contributionCalendar;
 }

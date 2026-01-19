@@ -1,10 +1,10 @@
-import { FaServicestack } from 'react-icons/fa';
+import { FaServicestack } from "react-icons/fa";
 
-import ServicesCard from './ServicesCard';
-import SectionHeading from '@/components/elements/SectionHeading';
-import SectionSubHeading from '@/components/elements/SectionSubHeading';
-import { IServices } from '@/types/services';
-import { servicesMock } from '@/constants/services';
+import ServicesCard from "./ServicesCard";
+import SectionHeading from "@/components/elements/SectionHeading";
+import SectionSubHeading from "@/components/elements/SectionSubHeading";
+import { IServices } from "@/types/services";
+import { servicesMock } from "@/constants/services";
 
 export default function ServicesList({ services }: { services?: IServices[] }) {
   return (
@@ -20,7 +20,7 @@ export default function ServicesList({ services }: { services?: IServices[] }) {
           </p>
         </SectionSubHeading>
       </div>
-      <div className="mt-6 grid gap-4">
+      <div className="mt-6 grid md:grid-cols-2 gap-4">
         {(services || servicesMock).map((item, index) => (
           <ServicesCard key={index} {...item} />
         ))}
