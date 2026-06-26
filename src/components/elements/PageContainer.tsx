@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 interface PageContainerProps {
   children: ReactNode;
@@ -9,8 +9,8 @@ interface PageContainerProps {
 
 export default function PageContainer({
   children,
-  className = '',
-  contentClassName = '',
+  className = "",
+  contentClassName = "",
   showTopGlow = false,
 }: PageContainerProps) {
   return (
@@ -26,7 +26,7 @@ export default function PageContainer({
       )}
 
       <div
-        className={`relative z-10 max-w-[1200px] w-full mx-auto px-margin-mobile md:px-margin-desktop flex flex-col gap-[80px] pb-section-gap ${contentClassName}`}
+        className={`relative z-10 max-w-[1200px] w-full mx-auto px-margin-mobile md:px-margin-desktop flex flex-col gap-[60px] md:gap-[80px] pb-section-gap ${contentClassName}`}
       >
         {children}
       </div>

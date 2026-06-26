@@ -39,7 +39,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   const project = detail;
   return (
     <div data-aos="fade-left">
-      <PageContainer contentClassName="pt-20 md:pt-28">
+      <PageContainer contentClassName="pt-24 md:pt-32">
         <JsonLd
           data={breadcrumbSchema([
             { name: "Home", url: "/" },

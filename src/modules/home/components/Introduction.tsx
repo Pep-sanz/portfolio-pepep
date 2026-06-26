@@ -10,6 +10,7 @@ import GradientButton from "@/components/elements/GradientButton";
 import SkillCard from "@/modules/about/components/SkillCard";
 import { STACKS } from "@/constants/stacks";
 import Image from "@/components/elements/Image";
+import BorderGlow from "@/components/elements/BorderGlow/BorderGlow";
 
 export default function Introduction() {
   const router = useRouter();
@@ -19,7 +20,7 @@ export default function Introduction() {
   ).sort(() => Math.random() - 0.5);
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-8 md:gap-12 items-center pt-16 md:pt-24 relative">
+    <section className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] md:gap-12 gap-0 max-sm:space-y-6 items-center pt-24 md:pt-32 relative">
       <div className="flex flex-col gap-5 md:gap-6 relative z-10">
         <div className="">
           <h1 className="font-geist text-headline-lg text-on-surface drop-shadow-sm">
@@ -37,7 +38,7 @@ export default function Introduction() {
         <div className="flex flex-wrap gap-3 md:gap-4">
           <div className="flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-glass-border glass-card text-on-surface-variant font-geist text-mono">
             <BiBriefcase size={16} />
-            <span>Remote/office workers</span>
+            <span>open to work</span>
           </div>
           <div className="flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-glass-border glass-card text-on-surface-variant font-geist text-mono">
             <BiMapPin size={16} />
@@ -74,9 +75,9 @@ export default function Introduction() {
           </GradientButton>
         </div>
       </div>
-      <div className="relative hidden md:block">
+      <div className="relative hidden lg:block">
         <div className="absolute inset-0 bg-primary/20 blur-[80px] rounded-full z-0" />
-        <div className="w-full h-[360px] md:h-[400px] rounded-3xl glass-card flex items-center justify-center relative z-10 overflow-hidden">
+        <div className="w-full h-[360px] lg:h-[400px] rounded-3xl glass-card flex items-center justify-center relative z-10 overflow-hidden">
           <Image
             alt="Portrait of Pepep Saepul R"
             width={300}

@@ -5,7 +5,7 @@ import PageContainer from "@/components/elements/PageContainer";
 
 export default function ProjectSection() {
   return (
-    <PageContainer contentClassName="pt-20 md:pt-28">
+    <PageContainer contentClassName="pt-24 md:pt-32">
       <ProjectList />
     </PageContainer>
   );
