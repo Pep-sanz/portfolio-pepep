@@ -20,15 +20,15 @@ export default function ToggleThemeIcon() {
       id="dark-mode-switcher"
       aria-label="Toggle Theme"
       onClick={toggleTheme}
-      className="rounded-xl bg-neutral-100 text-neutral-800 dark:text-white p-2 dark:bg-neutral-800"
+      className="rounded-full bg-black/[0.05] dark:bg-white/[0.08] text-on-surface-variant hover:text-on-surface hover:bg-black/[0.08] dark:hover:bg-white/[0.12] p-2 transition-all duration-300"
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 0.5 }}
     >
       {resolvedTheme === 'light' ? (
-        <BsCloudSun size={26} />
+        <BsCloudSun size={18} />
       ) : (
-        <BsCloudMoon size={26} />
+        <BsCloudMoon size={18} />
       )}
     </motion.button>
   );

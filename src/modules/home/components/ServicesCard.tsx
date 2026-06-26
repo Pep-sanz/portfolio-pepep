@@ -1,6 +1,5 @@
-import { Card } from '@/components/elements/Card';
-import MobileIlustration from '@/components/elements/MobileIlustration';
 import WebIlustration from '@/components/elements/WebIlustration';
+import MobileIlustration from '@/components/elements/MobileIlustration';
 
 interface ServicesCardProps {
   id: string;
@@ -15,24 +14,32 @@ export default function ServicesCard({
   description,
   id,
 }: ServicesCardProps) {
+  const isWeb = id === 'clw0yxaqk0000ab3s7p118cw7';
+  const isMobile = id === 'clw0yyejt0001ab3su66betrb';
+  const hoverBorder = isWeb ? 'hover:border-primary/30' : 'hover:border-accent-teal/30';
+  const gradientColor = isWeb ? 'from-primary/5' : 'from-accent-teal/5';
+
   return (
-    <Card className="relative border z-20 border-neutral-200 p-4 dark:border-neutral-700 md:p-6">
-      <div className="mb-5 flex items-center justify-center px-6 py-4">
-        {id === 'clw0yxaqk0000ab3s7p118cw7' ? <WebIlustration /> : null}
-        {id === 'clw0yyejt0001ab3su66betrb' ? <MobileIlustration /> : null}
-        {/* {id === 'clw0z042t0002ab3sormqhk3z' ? <AnalyticIlustration /> : null} */}
-        {/* {id === 'clw0z186t0003ab3smohmjtwr' ? <SeoIlustration /> : null} */}
+    <div
+      className={`glass-card p-6 md:p-8 rounded-2xl flex flex-col gap-4 group ${hoverBorder} transition-all duration-300 relative overflow-hidden`}
+    >
+      <div
+        className={`absolute inset-0 bg-gradient-to-br ${gradientColor} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+      />
+      <div className="relative z-10 flex items-center justify-center px-6 py-4">
+        {isWeb ? <WebIlustration /> : null}
+        {isMobile ? <MobileIlustration /> : null}
       </div>
-      <div className="w-full">
-        <span className="right-3 top-3 mb-1 flex w-max items-center justify-center rounded-lg border border-neutral-200 bg-neutral-200 bg-opacity-40 px-2 text-xs text-neutral-500 dark:border-teal-200  dark:bg-teal-900 dark:text-teal-200 md:absolute">
-          {tag}
-        </span>
-        <h3 className="text-xl font-medium">{title}</h3>
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {description}
-        </p>
-      </div>
-      <div className="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#80808018_1px,transparent_1px),linear-gradient(to_bottom,#80808018_1px,transparent_1px)] bg-[size:18px_18px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_20%,#000_80%,transparent_100%)]"></div>
-    </Card>
+      <div className="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#80808018_1px,transparent_1px),linear-gradient(to_bottom,#80808018_1px,transparent_1px)] bg-[size:18px_18px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_20%,#000_80%,transparent_100%)]" />
+      <span className="relative z-10 w-max rounded-lg border border-neutral-200 bg-neutral-200 bg-opacity-40 px-2 text-xs text-neutral-500 dark:border-teal-200 dark:bg-teal-900 dark:text-teal-200 font-geist">
+        {tag}
+      </span>
+      <h3 className="relative z-10 font-geist text-headline-lg-mobile text-on-surface">
+        {title}
+      </h3>
+      <p className="relative z-10 font-inter text-body-md text-on-surface-variant">
+        {description}
+      </p>
+    </div>
   );
 }

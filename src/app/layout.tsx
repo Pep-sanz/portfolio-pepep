@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Roboto } from "next/font/google";
+import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import "./loading.css";
 import { ThemeProviderContext } from "@/lib/themeProviderContext";
@@ -7,10 +8,17 @@ import { Suspense } from "react";
 import Loading from "./loading";
 import { SITE } from "@/lib/seo.config";
 import Layouts from "@/components/layouts";
+import JsonLd, { websiteSchema } from "@/components/elements/JsonLd";
 
-const roboto = Roboto({
+const geistSans = localFont({
+  src: "../../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2",
+  variable: "--font-geist-sans",
+  display: "swap",
+});
+
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "700", "900", "500", "300"], // Sesuaikan dengan kebutuhan
+  variable: "--font-inter",
 });
 
 export const viewport: Viewport = {
@@ -59,26 +67,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <body className={`${roboto.className} antialiased`}>
-        {/* <NextTopLoader
-          color="#05b6d3"
-          initialPosition={0.08}
-          crawlSpeed={200}
-          height={3}
-          crawl={true}
-          showSpinner={true}
-          easing="ease"
-          speed={200}
-          shadow="0 0 10px #05b6d3,0 0 5px #45c6c0"
-        /> */}
+    <html lang="id" suppressHydrationWarning={true}>
+      <body className={`${geistSans.variable} ${inter.variable} antialiased`}>
         <ThemeProviderContext
           defaultTheme="dark"
           enableSystem
           attribute={"class"}
         >
           <Layouts>
-            <Suspense fallback={<Loading />}>{children}</Suspense>
+            <Suspense fallback={<Loading />}>
+              <JsonLd data={websiteSchema()} />
+              {children}
+            </Suspense>
           </Layouts>
         </ThemeProviderContext>
       </body>

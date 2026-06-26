@@ -1,26 +1,22 @@
-import SectionHeading from '@/components/elements/SectionHeading';
-import SectionSubHeading from '@/components/elements/SectionSubHeading';
 import React from 'react';
-import { HiOutlineBriefcase as CareerIcon } from 'react-icons/hi';
 import CareerCard from './CareerCard';
 import DownloadResume from '@/components/elements/DownloadResume';
 
 export default function Career() {
   return (
-    <div className="w-full gap-6 flex flex-col dark:bg-secondary bg-white rounded-md shadow-md p-6 md:p-12">
-      <div className="space-y-2">
-        <SectionHeading
-          title="Career"
-          icon={<CareerIcon size={32} className="mr-1" />}
-        />
-        <SectionSubHeading>
-          <p className="dark:text-neutral-400">
+    <section className="flex flex-col gap-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="font-geist text-headline-lg text-on-surface">
+            Career
+          </h2>
+          <p className="font-inter text-body-sm text-on-surface-variant mt-1">
             My professional career journey
           </p>
-          <DownloadResume />
-        </SectionSubHeading>
+        </div>
+        <DownloadResume />
       </div>
       <CareerCard />
-    </div>
+    </section>
   );
 }

@@ -1,32 +1,68 @@
-import Tooltip from '@/components/elements/Tooltip';
-import { MenuItemProps } from '@/types/menu';
-import clsx from 'clsx';
-import { motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
-import React from 'react';
+import { MenuItemProps } from "@/types/menu";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React from "react";
 
-export default function NavItems({ title, icon, href }: MenuItemProps) {
-  const [isHover, setIsHover] = React.useState(false);
+const MotionLink = motion(Link);
+
+interface NavItemsProps extends MenuItemProps {
+  scrolled: boolean;
+  showIndicator: boolean;
+  isHovered: boolean;
+  onHover: () => void;
+  onLeave: () => void;
+}
+
+export default function NavItems({
+  title,
+  icon,
+  href,
+  scrolled,
+  showIndicator,
+  isHovered,
+  onHover,
+  onLeave,
+}: NavItemsProps) {
   const pathName = usePathname();
-  const isActivePath = pathName === href;
+  const isActive = pathName === href;
+  const showText = !scrolled || isActive || isHovered;
+
   return (
-    <motion.div
-      whileTap={{ scale: 0.9 }}
-      transition={{ ease: 'linear', duration: 0.4 }}
-      className={clsx('flex justify-center w-auto items-center')}
+    <MotionLink
+      href={href}
+      onHoverStart={onHover}
+      onHoverEnd={onLeave}
+      className="group relative flex items-center gap-2 px-3 py-1.5 rounded-full transition-colors duration-300 font-geist text-mono"
     >
-      <motion.a
-        href={href}
-        onHoverStart={() => setIsHover(true)}
-        onHoverEnd={() => setIsHover(false)}
-        className={clsx(
-          'flex justify-center items-center gap-2 px-4 py-2 hover:bg-hover rounded-full w-10 h-10 transition-all duration-300 ease-in',
-          isActivePath && 'bg-hover dark:text-white text-black',
-          isHover && !isActivePath && 'bg-hover',
-        )}
+      {showIndicator && (
+        <motion.div
+          layoutId="nav-indicator"
+          className="absolute inset-0 bg-primary/15 dark:bg-white/[0.07] rounded-full -z-10"
+          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+        />
+      )}
+      <span
+        className={`relative z-10 flex-shrink-0 transition-colors duration-200 ${isActive ? "text-on-surface" : "text-on-surface-variant group-hover:text-on-surface"}`}
       >
-        <Tooltip title={title}>{icon}</Tooltip>
-      </motion.a>
-    </motion.div>
+        {icon}
+      </span>
+      <motion.span
+        className="relative z-10 overflow-hidden whitespace-nowrap"
+        initial={false}
+        animate={{
+          maxWidth: showText ? 200 : 0,
+          opacity: showText ? 1 : 0,
+        }}
+        transition={{ duration: 0.25, ease: "easeInOut" }}
+        style={{ display: "inline-block" }}
+      >
+        <span
+          className={`transition-colors duration-200 ${isActive ? "text-on-surface" : "text-on-surface-variant group-hover:text-on-surface"}`}
+        >
+          {title}
+        </span>
+      </motion.span>
+    </MotionLink>
   );
 }

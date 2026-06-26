@@ -1,8 +1,4 @@
 import MarqueeElement from '@/components/elements/MarqueeElement';
-import SectionHeading from '@/components/elements/SectionHeading';
-import SectionSubHeading from '@/components/elements/SectionSubHeading';
-import { HiCode } from 'react-icons/hi';
-
 import SkillCard from './SkillCard';
 import { STACKS } from '@/constants/stacks';
 
@@ -12,15 +8,17 @@ export default function SkillList() {
   ).sort(() => Math.random() - 0.5);
 
   return (
-    <section className="overflow-x-hidden w-full space-y-6 flex flex-col dark:bg-secondary bg-white rounded-md shadow-md p-6 md:p-12">
-      <div className="space-y-2">
-        <SectionHeading title="Skills" icon={<HiCode className="mr-1" />} />
-        <SectionSubHeading>
-          <p className="dark:text-neutral-400">My coding skills</p>
-        </SectionSubHeading>
+    <section className="flex flex-col gap-6">
+      <div>
+        <h2 className="font-geist text-headline-lg text-on-surface">
+          Skills
+        </h2>
+        <p className="font-inter text-body-sm text-on-surface-variant mt-1">
+          My coding skills
+        </p>
       </div>
 
-      <div className="flex flex-col space-y-1 overflow-x-hidden">
+      <div className="flex flex-col gap-2 overflow-hidden">
         {Array.from({ length: 2 }, (_, index) => {
           const slider = [...stacksInArray].sort(() => Math.random() - 0.5);
           return (

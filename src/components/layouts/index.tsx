@@ -1,26 +1,44 @@
 'use client';
 
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import Navbar from './navbar';
 import MobileHeader from './navbar/MobileHeader';
 import { usePathname } from 'next/navigation';
 import { Toaster } from '@/components/ui/toaster';
+import Footer from './Footer';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Layouts({ children }: { children: ReactNode }) {
   const pathName = usePathname();
-
   const hideSidebar = ['/me'].includes(pathName);
 
-  return (
-    <div className="space-y-6 md:space-y-10 py-6 min-h-screen h-full overflow-x-hidden">
-      <div className="container md:max-w-[80vw] items-center justify-center">
-        {!hideSidebar && <Navbar />}
-        {!hideSidebar && <MobileHeader />}
-      </div>
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [pathName]);
 
-      <main className="no-scrollbar h-full w-full scroll-smooth transition-all duration-300 lg:min-h-screen">
-        {children}
+  return (
+    <div className="min-h-screen h-full overflow-x-hidden bg-slate-base">
+      {!hideSidebar && (
+        <>
+          <Navbar />
+          <MobileHeader />
+        </>
+      )}
+
+      <main className="w-full scroll-smooth min-h-screen">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={pathName}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+          >
+            {children}
+          </motion.div>
+        </AnimatePresence>
       </main>
+      {!hideSidebar && <Footer />}
       <Toaster />
     </div>
   );

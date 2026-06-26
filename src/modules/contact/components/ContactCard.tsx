@@ -1,63 +1,38 @@
 'use client';
 
-// import { usePathname } from 'next/navigation';
-
 import { FiArrowUpRight } from 'react-icons/fi';
 
-import { cn } from '@/lib/utils';
 import { SocialMedia } from '@/types/menu';
 
-export default function DiscordCard({
+export default function ContactCard({
   id,
   title,
   description,
   href,
   icon,
-  classContainer,
-  classText,
-  classLink,
-  classIcon,
 }: SocialMedia) {
-  // const pathname = usePathname();
   function handleCardClick() {
-    // sendDataLayer({
-    //   event: 'contact_clicked',
-    //   contact_title: title,
-    //   page_path: pathname,
-    // });
     window.open(href, '_blank');
   }
+
   return (
     <div
-      className={cn(
-        'flex h-max w-full items-end justify-between rounded-lg border bg-opacity-40 bg-gradient-to-br p-4 md:p-6',
-        // inter.className,
-        classContainer,
-      )}
+      onClick={handleCardClick}
+      className="glass-card rounded-2xl p-5 border border-glass-border hover:border-primary/30 transition-all duration-300 cursor-pointer flex items-start gap-4"
     >
-      <div className={classText}>
-        <h3 className="text-xl font-semibold ">{title}</h3>
-        <p className="my-2 max-w-[250px] text-[10px] md:text-xs">
+      <div className="glass-card rounded-full w-12 h-12 flex items-center justify-center text-on-surface-variant/70 shrink-0">
+        {icon}
+      </div>
+      <div className="flex flex-col gap-1 min-w-0 flex-1">
+        <div className="flex items-center justify-between gap-2">
+          <h3 className="font-geist text-headline-sm-mobile text-on-surface">
+            {title}
+          </h3>
+          <FiArrowUpRight className="text-on-surface-variant/50 shrink-0" size={18} />
+        </div>
+        <p className="font-inter text-body-sm text-on-surface-variant">
           {description}
         </p>
-        <button
-          onClick={handleCardClick}
-          className={cn(
-            'mt-4 flex w-max items-center gap-1 rounded-md px-3 py-2 text-[8px] text-xs font-medium text-white shadow-sm transition-all duration-150 dark:text-black md:px-4 md:py-2 md:text-sm',
-            classLink,
-          )}
-        >
-          <span>Go to {id}</span>
-          <FiArrowUpRight className="text-base md:text-xl" />
-        </button>
-      </div>
-      <div
-        className={cn(
-          'flex h-12 w-12 items-center justify-center rounded-full text-white md:h-16 md:w-16',
-          classIcon,
-        )}
-      >
-        {icon}
       </div>
     </div>
   );

@@ -1,13 +1,19 @@
-'use client';
-import React from 'react';
-import ContactList from './components/ContactList';
-import ContactForm from './components/ContactForm';
+import React from "react";
+import dynamic from "next/dynamic";
+import ContactList from "./components/ContactList";
+import PageContainer from "@/components/elements/PageContainer";
+
+const ContactForm = dynamic(() => import("./components/ContactForm"), {
+  ssr: false,
+});
 
 export default function ContactSection() {
   return (
-    <section className="space-y-12 container md:max-w-[80vw] grid items-center justify-items-center">
-      <ContactList />
-      <ContactForm />
-    </section>
+    <PageContainer contentClassName="pt-16 md:pt-24">
+      <section className="flex flex-col gap-8 md:gap-12">
+        <ContactList />
+        <ContactForm />
+      </section>
+    </PageContainer>
   );
 }

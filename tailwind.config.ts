@@ -12,6 +12,12 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-geist-sans)', 'monospace'],
+        geist: ['var(--font-geist-sans)'],
+        inter: ['var(--font-inter)'],
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
@@ -54,21 +60,113 @@ export default {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
+        'slate-base': 'hsl(var(--slate-base))',
+        'slate-surface': '#171719',
+        'slate-muted': '#A3A3A3',
+        'accent-teal': '#2DD4BF',
+        'glass-border': 'var(--glass-border-value)',
+        'surface-tint': '#89ceff',
+        'on-surface-variant': 'hsl(var(--on-surface-variant))',
+        'surface-container': 'hsl(var(--surface-container))',
+        'surface-container-low': 'hsl(var(--surface-container-low))',
+        'surface-container-high': 'hsl(var(--surface-container-high))',
+        'primary-container': '#0ea5e9',
+        'secondary-container': '#571bc1',
+        'on-surface': 'hsl(var(--on-surface))',
+        'on-primary': '#00344d',
       },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+        '2xl': '1.5rem',
+        '3xl': '2rem',
+        full: '9999px',
       },
-    },
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        lg: '4rem',
-        xl: '5rem',
-        '2xl': '6rem',
+      spacing: {
+        'section-gap': '120px',
+        'margin-desktop': '64px',
+        'margin-mobile': '20px',
+        gutter: '24px',
+      },
+      fontSize: {
+        'headline-xl': [
+          '48px',
+          {
+            lineHeight: '1.1',
+            letterSpacing: '-0.04em',
+            fontWeight: '700',
+          },
+        ],
+        'headline-lg': [
+          '32px',
+          {
+            lineHeight: '1.2',
+            letterSpacing: '-0.02em',
+            fontWeight: '600',
+          },
+        ],
+        'headline-lg-mobile': [
+          '28px',
+          {
+            lineHeight: '1.2',
+            fontWeight: '600',
+          },
+        ],
+        'body-md': [
+          '16px',
+          {
+            lineHeight: '1.6',
+            letterSpacing: '0em',
+            fontWeight: '400',
+          },
+        ],
+        'body-sm': [
+          '14px',
+          {
+            lineHeight: '1.5',
+            fontWeight: '400',
+          },
+        ],
+        'label-caps': [
+          '12px',
+          {
+            lineHeight: '1.0',
+            letterSpacing: '0.1em',
+            fontWeight: '600',
+          },
+        ],
+        mono: [
+          '14px',
+          {
+            lineHeight: '1.5',
+            fontWeight: '400',
+          },
+        ],
+      },
+      animation: {
+        'glow-pulse': 'glow-pulse 3s ease-in-out infinite alternate',
+        'float': 'float 6s ease-in-out infinite',
+      },
+      keyframes: {
+        'glow-pulse': {
+          '0%': { opacity: '0.3' },
+          '100%': { opacity: '0.6' },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          sm: '2rem',
+          lg: '4rem',
+          xl: '5rem',
+          '2xl': '6rem',
+        },
       },
     },
   },

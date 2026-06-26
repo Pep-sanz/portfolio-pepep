@@ -1,14 +1,18 @@
-'use client';
-
-import React from 'react';
-import Introduction from './components/Introduction';
-import ServicesList from './components/ServicesList';
+import React from "react";
+import Introduction from "./components/Introduction";
+import ServicesList from "./components/ServicesList";
+import LatestProjects from "./components/LatestProjects";
+import DecorativeDivider from "./components/DecorativeDivider";
+import PageContainer from "@/components/elements/PageContainer";
 
 export default function HomeSection() {
   return (
-    <section className="space-y-12 container md:max-w-[80vw] grid items-center justify-items-center">
+    <PageContainer showTopGlow>
       <Introduction />
+      <DecorativeDivider color="primary" />
+      <LatestProjects />
+      <DecorativeDivider color="secondary" />
       <ServicesList />
-    </section>
+    </PageContainer>
   );
 }

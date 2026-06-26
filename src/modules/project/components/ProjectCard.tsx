@@ -1,14 +1,9 @@
 import Link from 'next/link';
 
-import { Card } from '@/components/elements/Card';
 import Image from '@/components/elements/Image';
 import Tooltip from '@/components/elements/Tooltip';
 import { IProjectItem } from '@/types/projects';
 import { STACKS } from '@/constants/stacks';
-
-// import { PLACEHOLDER_URL } from '@/common/constant';
-// import { STACKS } from '@/common/constant/stacks';
-// import { getCloudinaryUrl } from '@/common/libs/cloudinary';
 
 export default function ProjectCard({
   title,
@@ -19,38 +14,47 @@ export default function ProjectCard({
   is_featured,
 }: IProjectItem) {
   const trimmedContent =
-    description.slice(0, 70) + (description.length > 70 ? '...' : '');
+    description.slice(0, 100) + (description.length > 100 ? '...' : '');
   return (
-    <Link href={`/projects/${slug}`} className="max-w-full">
-      <Card className="relative max-sm:max-w-[85vw] cursor-pointer border border-neutral-200 bg-gradient-to-br from-white to-neutral-100 dark:border-neutral-700 dark:from-neutral-800 dark:to-neutral-900 lg:hover:scale-[102%] lg:hover:border-neutral-300 dark:lg:hover:border-teal-300">
+    <Link href={`/projects/${slug}`} className="group">
+      <div className="glass-card rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300 h-full flex flex-col">
         {is_featured && (
-          <div className="absolute right-0 top-0 z-[2] rounded-bl-xl rounded-tr-xl bg-emerald-300 px-2 py-1 text-[13px] font-medium text-emerald-950">
+          <div className="absolute right-0 top-0 z-[2] rounded-bl-xl rounded-tr-xl bg-emerald-500 px-3 py-1.5 font-geist text-label-caps text-white">
             Featured
           </div>
         )}
-        <Image
-          src={image}
-          width={600}
-          height={200}
-          alt={title}
-          className="h-48 rounded-t-xl object-cover object-left"
-        />
-        <div className="space-y-2 p-5">
-          <div className="font-sora cursor-pointer text-lg text-neutral-700 transition-all duration-300 dark:text-neutral-300 dark:hover:text-teal-400 lg:hover:text-teal-800">
+        <div className="relative h-48 overflow-hidden">
+          <Image
+            src={image}
+            width={600}
+            height={200}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+        <div className="p-5 md:p-6 flex flex-col gap-3 flex-1">
+          <h3 className="font-geist text-headline-sm-mobile text-on-surface group-hover:text-primary transition-colors duration-200">
             {title}
-          </div>
-          <p className="text-[15px] leading-relaxed text-neutral-700 dark:text-neutral-400">
+          </h3>
+          <p className="font-inter text-body-sm text-on-surface-variant flex-1">
             {trimmedContent}
           </p>
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            {stacks?.map((stack: string, index: number) => (
-              <div key={index} className="w-6">
-                <Tooltip title={stack}>{STACKS[stack]}</Tooltip>
+            {stacks?.slice(0, 5).map((stack: string, index: number) => (
+              <div key={index} className="w-5 h-5">
+                <Tooltip title={stack}>
+                  <span className="text-on-surface-variant/70">{STACKS[stack]}</span>
+                </Tooltip>
               </div>
             ))}
+            {stacks && stacks.length > 5 && (
+              <span className="text-xs text-on-surface-variant/50 font-geist">
+                +{stacks.length - 5}
+              </span>
+            )}
           </div>
         </div>
-      </Card>
+      </div>
     </Link>
   );
 }

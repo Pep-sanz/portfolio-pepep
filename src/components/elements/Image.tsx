@@ -10,14 +10,14 @@ type ImageProps = {
 } & NextImageProps;
 
 const Image = (props: ImageProps) => {
-  const { alt, src, className, rounded, ...rest } = props;
+  const { alt, src, className, rounded, priority, ...rest } = props;
   const [isLoading, setLoading] = useState(true);
 
   return (
     <div
       className={clsx(
         'overflow-hidden',
-        isLoading ? 'animate-pulse' : '',
+        isLoading && !priority ? 'animate-pulse' : '',
         rounded,
       )}
     >
@@ -25,7 +25,7 @@ const Image = (props: ImageProps) => {
         data-testid="image"
         className={clsx(
           'duration-700 ease-in-out',
-          isLoading
+          isLoading && !priority
             ? 'scale-[1.02] blur-xl grayscale'
             : 'scale-100 blur-0 grayscale-0',
           rounded,
@@ -33,8 +33,8 @@ const Image = (props: ImageProps) => {
         )}
         src={src}
         alt={alt}
-        loading="lazy"
-        quality={100}
+        loading={priority ? undefined : 'lazy'}
+        quality={80}
         onLoad={() => setLoading(false)}
         {...rest}
       />

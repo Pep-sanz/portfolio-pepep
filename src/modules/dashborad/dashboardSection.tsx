@@ -1,14 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-import Contributions from './components/Contributions';
+import PageContainer from "@/components/elements/PageContainer";
+import Contributions from "./components/Contributions";
 
 interface DashboardProps {
   githubData: any;
 }
 export default function Dashboard({ githubData }: DashboardProps) {
   return (
-    <section className="space-y-12 container md:max-w-[80vw]">
+    <PageContainer contentClassName="pt-16 md:pt-24">
       <Contributions githubData={githubData} />
-    </section>
+    </PageContainer>
   );
 }

@@ -13,7 +13,7 @@ import {
 } from 'react-icons/bs';
 import { LuTrello } from 'react-icons/lu';
 
-const iconSize = 26;
+const iconSize = 20;
 
 export const MENU_ITEMS: MenuItemProps[] = [
   {

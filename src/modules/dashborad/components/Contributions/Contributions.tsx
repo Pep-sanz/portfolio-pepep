@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Link from 'next/link';
+import Link from "next/link";
+import dynamic from "next/dynamic";
 
-import SectionHeading from '@/components/elements/SectionHeading';
-import SectionSubHeading from '@/components/elements/SectionSubHeading';
-import { BsGithub as GithubIcon } from 'react-icons/bs';
+import { BsGithub as GithubIcon } from "react-icons/bs";
 
-import Calendar from './Calendar';
-import Overview from './Overview';
-import { GITHUB_ACCOUNTS } from '@/constants/github';
+import Overview from "./Overview";
+import { GITHUB_ACCOUNTS } from "@/constants/github";
+
+const Calendar = dynamic(() => import("./Calendar"), { ssr: false });
 
 type ContributionsProps = {
   githubData: any;
@@ -15,26 +15,30 @@ type ContributionsProps = {
 
 export default function Contributions({ githubData }: ContributionsProps) {
   return (
-    <section className="flex flex-col space-y-4 dark:bg-secondary bg-white rounded-md shadow-md p-6 md:p-12">
-      <SectionHeading
-        title="Contributions"
-        icon={<GithubIcon className="mr-1" />}
-      />
-      <SectionSubHeading>
-        <p className="dark:text-neutral-400">
-          My contributions from last year on github.
-        </p>
+    <div className="glass-card rounded-2xl p-6 md:p-10 border border-glass-border flex flex-col gap-6 relative overflow-hidden">
+      <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-primary/15 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute -top-20 -left-20 w-48 h-48 bg-secondary-container/10 blur-[80px] rounded-full pointer-events-none" />
+      <div className="flex items-start justify-between gap-2">
+        <div>
+          <h2 className="font-geist text-headline-lg text-on-surface flex items-center gap-2">
+            <GithubIcon className="text-on-surface-variant/70" size={24} />
+            Contributions
+          </h2>
+          <p className="font-inter text-body-sm text-on-surface-variant mt-1">
+            My contributions from last year on GitHub.
+          </p>
+        </div>
         <Link
           href={`https://github.com/${GITHUB_ACCOUNTS.username}`}
           target="_blank"
           passHref
-          className="font-code text-sm text-neutral-600 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-400"
+          className="font-geist text-mono text-on-surface-variant hover:text-primary transition-colors duration-200 shrink-0"
         >
           @{GITHUB_ACCOUNTS.username}
         </Link>
-      </SectionSubHeading>
+      </div>
 
-      {!githubData && <div className="dark:text-neutral-400">No Data</div>}
+      {!githubData && <div className="text-on-surface-variant">No Data</div>}
 
       {githubData && (
         <div className="space-y-3">
@@ -42,6 +46,6 @@ export default function Contributions({ githubData }: ContributionsProps) {
           <Calendar data={githubData} />
         </div>
       )}
-    </section>
+    </div>
   );
 }

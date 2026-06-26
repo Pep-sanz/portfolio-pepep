@@ -13,8 +13,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
 
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 199 100% 77%;
+    --primary-foreground: 199 100% 15%;
 
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
@@ -33,25 +33,37 @@
     --ring: 0 0% 3.9%;
 
     --hover: 0, 0%, 95%;
-
     --radius: 0.5rem;
 
-    --d: 2500ms;
-    --angle: 90deg;
-    --gradX: 100%;
-    --gradY: 50%;
-    --c1: rgba(168, 239, 255, 1);
-    --c2: rgba(168, 239, 255, 0.1);
-
-    --line2-color: #d4d4d4; /* neutral-300 */
-    --line1-color: #a3a3a3; /* neutral-200 */
-    --area1-color: rgba(212, 212, 212, 0.3); /* neutral-300 with transparency */
-    --area2-color: rgba(229, 229, 229, 0.3); /* neutral-200 with transparency */
+    --line2-color: #d4d4d4;
+    --line1-color: #a3a3a3;
+    --area1-color: rgba(212, 212, 212, 0.3);
+    --area2-color: rgba(229, 229, 229, 0.3);
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+
+    /* Custom design tokens — light */
+    --slate-base: 220 14% 97%;
+    --on-surface: 210 7% 11%;
+    --on-surface-variant: 220 9% 46%;
+    --surface-container: 0 0% 100%;
+    --surface-container-low: 210 17% 98%;
+    --surface-container-high: 220 8% 95%;
+
+    /* Glass effects — light */
+    --glass-border-value: rgba(0, 0, 0, 0.08);
+    --glass-card-bg: rgba(255, 255, 255, 0.6);
+    --glass-card-shadow:
+      inset 0 0 20px rgba(255, 255, 255, 0.5),
+      0 8px 32px rgba(0, 0, 0, 0.08);
+    --dynamic-island-bg: rgba(255, 255, 255, 0.7);
+    --dynamic-island-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.1),
+      inset 0 0 20px rgba(255, 255, 255, 0.5);
+    --grid-pattern-color: rgba(0, 0, 0, 0.08);
   }
 
   .dark {
@@ -64,8 +76,8 @@
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 20%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 199 100% 77%;
+    --primary-foreground: 199 100% 15%;
 
     --secondary: 0 0% 12.9%;
     --secondary-foreground: 0 0% 98%;
@@ -85,22 +97,35 @@
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
 
-    --d: 2500ms;
-    --angle: 90deg;
-    --gradX: 100%;
-    --gradY: 50%;
-    --c1: rgba(168, 239, 255, 1);
-    --c2: rgba(168, 239, 255, 0.1);
-
-    --line1-color: #67e8f9; /* neutral-800 */
-    --line2-color: #e879f9; /* neutral-700 */
-    --area1-color: rgba(38, 38, 38, 0.3); /* neutral-800 with transparency */
-    --area2-color: rgba(64, 64, 64, 0.3); /* neutral-700 with transparency */
+    --line1-color: #67e8f9;
+    --line2-color: #e879f9;
+    --area1-color: rgba(38, 38, 38, 0.3);
+    --area2-color: rgba(64, 64, 64, 0.3);
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+
+    /* Custom design tokens — dark */
+    --slate-base: 240 6% 4%;
+    --on-surface: 200 15% 89%;
+    --on-surface-variant: 204 18% 78%;
+    --surface-container: 207 14% 12%;
+    --surface-container-low: 207 16% 11%;
+    --surface-container-high: 204 11% 16%;
+
+    /* Glass effects — dark */
+    --glass-border-value: rgba(255, 255, 255, 0.08);
+    --glass-card-bg: rgba(23, 23, 25, 0.4);
+    --glass-card-shadow:
+      inset 0 0 20px rgba(255, 255, 255, 0.02),
+      0 8px 32px rgba(0, 0, 0, 0.2);
+    --dynamic-island-bg: rgba(23, 23, 25, 0.6);
+    --dynamic-island-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      inset 0 0 20px rgba(255, 255, 255, 0.02);
+    --grid-pattern-color: rgba(255, 255, 255, 0.08);
   }
 }
 
@@ -110,5 +135,30 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--glass-card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border-value);
+    box-shadow: var(--glass-card-shadow);
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(var(--grid-pattern-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-pattern-color) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  .dynamic-island {
+    background: var(--dynamic-island-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border-value);
+    box-shadow: var(--dynamic-island-shadow);
   }
 }

@@ -1,58 +1,60 @@
-import SectionHeading from "@/components/elements/SectionHeading";
-import SectionSubHeading from "@/components/elements/SectionSubHeading";
 import Tooltip from "@/components/elements/Tooltip";
 import { summaryMock } from "@/constants/summary";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { BiLeaf } from "react-icons/bi";
 import { MdVerified as VerifiedIcon } from "react-icons/md";
 
 export default function Summary() {
   return (
-    <div className="space-y-6 dark:bg-secondary bg-white rounded-md shadow-md p-6 md:p-12">
-      <div className="space-y-2">
-        <SectionHeading
-          title="About"
-          icon={<BiLeaf size={32} className="mr-1" />}
-        />
-        <SectionSubHeading>
-          <p className="dark:text-neutral-400">A short story of me</p>
-        </SectionSubHeading>
-      </div>
-      <div className="flex justify-between flex-col lg:flex-row gap-6">
-        <div className="space-y-3 flex flex-col items-center h-fit">
-          <Image
-            src="/Images/pepep-1.png"
-            width={250}
-            height={200}
-            alt="profile"
-            className="rounded-lg"
-          />
-          <div className="flex flex-col justify-center items-center">
-            <div className="mt-1 flex items-center gap-2">
-              <Link href="/" passHref>
-                <h2 className="flex-grow dark:text-white whitespace-nowrap text-lg font-bold lg:text-xl">
+    <div className="relative py-6 md:py-8">
+      <div className="space-y-6">
+        <div>
+          <h2 className="font-geist text-headline-lg text-on-surface">
+            About
+          </h2>
+          <p className="font-inter text-body-sm text-on-surface-variant mt-1">
+            A short story of me
+          </p>
+        </div>
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+          <div className="space-y-4 flex flex-col items-center w-full lg:w-auto flex-shrink-0">
+            <div className="relative">
+              <div className="absolute inset-0 bg-primary/20 blur-[80px] rounded-full" />
+              <div className="rounded-2xl overflow-hidden relative z-10">
+                <Image
+                  src="/Images/pepep-1.png"
+                  width={250}
+                  height={200}
+                  alt="profile"
+                  priority
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div className="flex flex-col items-center gap-1">
+              <div className="flex items-center gap-2">
+                <h2 className="font-geist text-headline-lg-mobile text-on-surface whitespace-nowrap">
                   Pepep Saepul Rohman
                 </h2>
+                <Tooltip title="Verified">
+                  <VerifiedIcon size={18} className="text-primary" />
+                </Tooltip>
+              </div>
+              <Link
+                href="/"
+                className="font-geist text-mono text-on-surface-variant hover:text-primary transition-colors duration-200"
+              >
+                @pepCode
               </Link>
-              <Tooltip title="Verified">
-                <VerifiedIcon size={18} className="text-blue-400" />
-              </Tooltip>
             </div>
-            <Link
-              href="/"
-              className="font-semibold cursor-pointer text-neutral-600 dark:text-neutral-400"
-            >
-              @pepCode
-            </Link>
           </div>
-        </div>
-        <div className="flex flex-col space-y-6 font-sans text-neutral-800 dark:text-neutral-300">
-          <p>{summaryMock.paragraphOne}</p>
-          <p>{summaryMock.paragraphTwo}</p>
-          <p>{summaryMock.paragraphThree}</p>
-          <p>{summaryMock.paragraphFour}</p>
+          <div className="flex flex-col gap-5 font-inter text-body-md text-on-surface-variant leading-relaxed">
+            <p>{summaryMock.paragraphOne}</p>
+            <p>{summaryMock.paragraphTwo}</p>
+            <p>{summaryMock.paragraphThree}</p>
+            <p>{summaryMock.paragraphFour}</p>
+          </div>
         </div>
       </div>
     </div>

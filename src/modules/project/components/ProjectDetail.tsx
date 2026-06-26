@@ -1,54 +1,70 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
-import Tooltip from '@/components/elements/Tooltip';
-import { IProjectItem } from '@/types/projects';
-import { STACKS } from '@/constants/stacks';
-import ProjectLink from './ProjectLink';
+import { STACKS } from '@/constants/stacks'
+import ProjectLink from './ProjectLink'
 
-// projectDetail
+type ProjectDetailProps = {
+  title: string
+  description: string
+  image: string
+  stacks: string[]
+  link_demo?: string | null
+  link_github?: string | null
+}
+
 export default function ProjectDetail({
   title,
+  description,
   image,
   stacks,
   link_demo,
   link_github,
-  content,
-}: IProjectItem) {
+}: ProjectDetailProps) {
   return (
-    <div className="space-y-8 overflow-hidden flex items-center justify-center flex-col ">
-      <div className="w-full flex flex-col items-start justify-between gap-5 sm:flex-row lg:flex-row lg:items-center">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="mb-1 text-[15px] text-neutral-700 dark:text-neutral-300">
-            Tech Stack :
-          </span>
-          <div className="flex flex-wrap items-center gap-3">
-            {stacks?.map((stack: string, index: number) => (
-              <div key={index}>
-                <Tooltip title={stack}>
-                  <div className="w-5">{STACKS[stack]}</div>
-                </Tooltip>
+    <div className="flex flex-col items-stretch gap-8 md:gap-10">
+      {description && (
+        <p className="text-body text-on-surface-variant leading-relaxed">{description}</p>
+      )}
+
+      {stacks && stacks.length > 0 && (
+        <div>
+          <h3 className="font-geist text-label-caps text-on-surface-variant mb-3">
+            Tech Stack
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {stacks.map((stack: string, index: number) => (
+              <div
+                key={index}
+                className="glass-card rounded-full px-3 py-1.5 flex items-center gap-2 border border-glass-border"
+              >
+                <div className="w-4 h-4 text-on-surface-variant/70 shrink-0">
+                  {STACKS[stack]}
+                </div>
+                <span className="font-geist text-mono text-on-surface-variant text-xs">
+                  {stack}
+                </span>
               </div>
             ))}
           </div>
         </div>
-        <ProjectLink
-          title={title}
-          link_demo={link_demo || ''}
-          link_github={link_github || ''}
-        />
-      </div>
-      <Image
-        src={image}
-        width={800}
-        height={400}
-        alt={title}
-        className="transition-all duration-300 hover:scale-105"
-      />
-      {/* {content && (
-        <div className="mt-5 space-y-6 leading-[1.8] dark:text-neutral-300">
-          <MDXComponent>{content}</MDXComponent>
+      )}
+
+      {image && (
+        <div className="relative">
+          <div className="absolute inset-0 bg-primary/10 blur-[80px] rounded-full" />
+          <div className="relative h-60 w-full overflow-hidden rounded-2xl grayscale transition-all duration-500 hover:grayscale-0 md:h-72 lg:h-96">
+            <Image
+              src={image}
+              alt={title || 'Project image'}
+              fill
+              className="object-cover object-top duration-700 hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </div>
         </div>
-      )} */}
+      )}
+
+      <ProjectLink link_demo={link_demo} link_github={link_github} />
     </div>
-  );
+  )
 }

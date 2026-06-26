@@ -1,11 +1,20 @@
-import SectionHeading from '@/components/elements/SectionHeading';
-import SectionSubHeading from '@/components/elements/SectionSubHeading';
 import React from 'react';
-// import DownloadResume from '@/components/elements/DownloadResume';
-import { BiArchive } from 'react-icons/bi';
 import { motion } from 'framer-motion';
 import { projectItems } from '@/constants/dataProject';
 import ProjectCard from './ProjectCard';
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
 
 export default function ProjectList() {
   const fiteredProjects = projectItems.filter((project) => project?.is_show);
@@ -14,30 +23,27 @@ export default function ProjectList() {
     return 'no data';
   }
   return (
-    <div className="w-full gap-6 flex flex-col dark:bg-secondary bg-white rounded-md shadow-md p-3 md:p-6 lg:p-12">
-      <div className="space-y-2">
-        <SectionHeading
-          title="Projects"
-          icon={<BiArchive size={32} className="mr-1" />}
-        />
-        <SectionSubHeading>
-          <p className="dark:text-neutral-400">
-            My professional career journey
-          </p>
-        </SectionSubHeading>
+    <section className="flex flex-col gap-8">
+      <div>
+        <h2 className="font-geist text-headline-lg text-on-surface">
+          Projects
+        </h2>
+        <p className="font-inter text-body-sm text-on-surface-variant mt-1">
+          My professional career journey
+        </p>
       </div>
-      <div className="grid w-full md:grid-cols-2 gap-6">
+      <motion.div
+        className="grid w-full md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
         {fiteredProjects.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
-          >
+          <motion.div key={index} variants={itemVariants}>
             <ProjectCard {...project} />
           </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 }

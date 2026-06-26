@@ -1,58 +1,49 @@
-import styled from '@emotion/styled'
-import clsx from 'clsx'
+import { motion } from 'framer-motion';
 
 interface MobileMenuButtonProps {
-  expandMenu: boolean
-  setExpandMenu: (expand: boolean) => void
+  expandMenu: boolean;
+  setExpandMenu: (expand: boolean) => void;
 }
 
-const MobileMenuButton = ({ expandMenu, setExpandMenu }: MobileMenuButtonProps) => {
-  const handleMenuToggle = () => {
-    setExpandMenu(!expandMenu)
-  }
-
-  const menuSpanData = [{ index: 1 }, { index: 2 }, { index: 3 }]
-
+const MobileMenuButton = ({
+  expandMenu,
+  setExpandMenu,
+}: MobileMenuButtonProps) => {
   return (
-    <StyledMenu className="flex lg:hidden" onClick={handleMenuToggle}>
-      {menuSpanData.map(item => (
-        <StyledMenuSpan
-          key={item.index}
-          className={clsx('bg-neutral-950 dark:bg-neutral-100 ', expandMenu && 'active')}
-        />
-      ))}
-    </StyledMenu>
-  )
-}
+    <button
+      onClick={() => setExpandMenu(!expandMenu)}
+      className="relative flex items-center justify-center w-6 h-6"
+      aria-label="Toggle menu"
+    >
+      <motion.span
+        className="absolute w-5 h-0.5 rounded-full bg-on-surface-variant"
+        animate={expandMenu ? 'open' : 'closed'}
+        variants={{
+          closed: { rotate: 0, y: -4 },
+          open: { rotate: 45, y: 0 },
+        }}
+        transition={{ duration: 0.25, ease: 'easeInOut' }}
+      />
+      <motion.span
+        className="absolute w-5 h-0.5 rounded-full bg-on-surface-variant"
+        animate={expandMenu ? 'open' : 'closed'}
+        variants={{
+          closed: { opacity: 1, x: 0 },
+          open: { opacity: 0, x: 6 },
+        }}
+        transition={{ duration: 0.2, ease: 'easeInOut' }}
+      />
+      <motion.span
+        className="absolute w-5 h-0.5 rounded-full bg-on-surface-variant"
+        animate={expandMenu ? 'open' : 'closed'}
+        variants={{
+          closed: { rotate: 0, y: 4 },
+          open: { rotate: -45, y: 0 },
+        }}
+        transition={{ duration: 0.25, ease: 'easeInOut' }}
+      />
+    </button>
+  );
+};
 
-export default MobileMenuButton
-
-const StyledMenu = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 21px;
-  width: 26px;
-  cursor: pointer;
-`
-
-const StyledMenuSpan = styled.span`
-  width: 100%;
-  height: 3px;
-  transition: all 0.5s ease;
-  border-radius: 10px;
-
-  &.active:nth-of-type(1),
-  &.active:nth-of-type(3) {
-    transform-origin: left;
-  }
-  &.active:nth-of-type(1) {
-    transform: rotate(45deg);
-  }
-  &.active:nth-of-type(2) {
-    width: 0;
-  }
-  &.active:nth-of-type(3) {
-    transform: rotate(-45deg);
-  }
-`
+export default MobileMenuButton;

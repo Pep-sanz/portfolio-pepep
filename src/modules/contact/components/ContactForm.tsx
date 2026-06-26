@@ -1,12 +1,12 @@
 'use client';
 
 import InputField from '@/components/elements/InputField';
-import SectionHeading from '@/components/elements/SectionHeading';
-import { Button } from '@/components/ui/button';
+import GradientButton from '@/components/elements/GradientButton';
 import { useToast } from '@/hooks/use-toast';
 import fetcher from '@/lib/fetcher';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { FiSend } from 'react-icons/fi';
 
 interface IFormEmail {
   name: string;
@@ -57,9 +57,14 @@ export default function ContactForm() {
   }, [isLoading, isSuccess]);
 
   return (
-    <div className="flex flex-col space-y-4 w-full dark:bg-secondary bg-white rounded-md shadow-md p-6 md:p-12">
-      <div className="space-y-2">
-        <SectionHeading title="Or send me a message" />
+    <div className="glass-card rounded-2xl p-6 md:p-10 border border-glass-border flex flex-col gap-6">
+      <div>
+        <h2 className="font-geist text-headline-lg text-on-surface">
+          Or Send Me a Message
+        </h2>
+        <p className="font-inter text-body-sm text-on-surface-variant mt-1">
+          I&apos;ll get back to you soon
+        </p>
       </div>
       <form
         onSubmit={handleSubmit(handleFormSubmit)}
@@ -92,13 +97,10 @@ export default function ContactForm() {
           error={errors}
           isTextArea
         />
-        <Button
-          disabled={isLoading}
-          type="submit"
-          className="rounded-lg bg-neutral-700 px-4 py-2 text-white shadow-md hover:bg-neutral-800 hover:shadow-lg"
-        >
+        <GradientButton type="submit" disabled={isLoading} size="md">
+          <FiSend className="shrink-0" />
           {buttonText}
-        </Button>
+        </GradientButton>
       </form>
     </div>
   );

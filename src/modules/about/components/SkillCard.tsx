@@ -7,10 +7,12 @@ interface SkillCardProps {
 
 export default function SkillCard({ name, icon }: SkillCardProps) {
   return (
-    <div className="px-2">
-      <div className="flex w-full space-x-2 rounded-full px-4 py-2 shadow-[0_3px_10px_rgb(0,0,0,0.15)] dark:shadow-neutral-800">
-        <div className="h-6 w-6">{icon}</div>
-        <div className="whitespace-nowrap">{name}</div>
+    <div className="mx-2">
+      <div className="glass-card rounded-full px-5 py-2.5 border border-glass-border flex items-center gap-3">
+        <div className="w-5 h-5 text-on-surface-variant/70">{icon}</div>
+        <span className="font-geist text-mono text-on-surface-variant whitespace-nowrap">
+          {name}
+        </span>
       </div>
     </div>
   )

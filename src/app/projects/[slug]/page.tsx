@@ -1,38 +1,72 @@
+import { Metadata } from 'next';
 import BackButton from '@/components/elements/BackButton';
-// import Container from '@/components/elements/Container';
 import { projectItems } from '@/constants/dataProject';
-import PageHeading from '@/components/elements/PageHeading';
 import ProjectDetail from '@/modules/project/components/ProjectDetail';
-// import { IProjectItem } from '@/types/projects';
+import PageContainer from '@/components/elements/PageContainer';
+import { SITE } from '@/lib/seo.config';
+import JsonLd, { breadcrumbSchema, projectSchema } from '@/components/elements/JsonLd';
 
-// interface ProjectsDetailPageProps {
-//   params: { slug: string };
-// }
+type Props = {
+  params: { slug: string };
+};
 
-export default async function ProjectDetailPage({ params }) {
+export async function generateStaticParams() {
+  return projectItems
+    .filter((p) => p.is_show)
+    .map((p) => ({ slug: p.slug }));
+}
+
+export const dynamicParams = false;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const detail = projectItems.find((item) => item.slug === params.slug);
+  if (!detail) return {};
+  return {
+    title: detail.title,
+    description: detail.description,
+    openGraph: {
+      title: detail.title,
+      description: detail.description,
+      images: [{ url: `${SITE.url}${detail.image}` }],
+    },
+  };
+}
+
+export default async function ProjectDetailPage({ params }: Props) {
   const slug = params?.slug;
   const detail = projectItems.find((item) => item.slug === slug);
-  console.log(slug, params);
+  const project = detail;
   return (
-    <div data-aos="fade-left" className="space-y-12 container md:max-w-[80vw] ">
-      <section className="flex flex-col w-full dark:bg-secondary bg-white rounded-md shadow-md p-6 md:p-12">
-        <div>
-          <BackButton url="/projects" />
-          <PageHeading title={detail.title} description={detail.description} />
-        </div>
-        <ProjectDetail {...detail} />
-      </section>
+    <div data-aos="fade-left">
+      <PageContainer contentClassName="pt-16 md:pt-24">
+        <JsonLd
+          data={breadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Projects', url: '/projects' },
+            { name: project?.title || '', url: `/projects/${slug}` },
+          ])}
+        />
+        {project && (
+          <JsonLd
+            data={projectSchema({
+              title: project.title,
+              description: project.description,
+              image: project.image,
+              url: `/projects/${project.slug}`,
+              stacks: project.stacks,
+            })}
+          />
+        )}
+        <section className="glass-card rounded-2xl p-6 md:p-12 flex flex-col w-full">
+          <div className="space-y-2 mb-8">
+            <BackButton url="/projects" />
+            <h1 className="font-geist text-headline-lg text-on-surface">
+              {project?.title}
+            </h1>
+          </div>
+          <ProjectDetail {...detail} />
+        </section>
+      </PageContainer>
     </div>
   );
 }
-
-// async function getProjectDetail(slug: string): Promise<IProjectItem> {
-//   const response = await getCodeBayuData();
-//   const projects = response.projects;
-
-//   const project = projects.find((item) => item.slug === slug) as IProjectItem;
-//   const contents = loadMdxFiles(slug, 'projects');
-//   const content = contents.find((item) => item.slug === slug);
-//   const newResponse = { ...project, content: content?.content };
-//   return newResponse;
-// }

@@ -7,10 +7,9 @@ export default function DownloadResume() {
     <a
       href="/pdfs/resume.pdf"
       download="pepep-portfolio.pdf"
-      className="flex items-center gap-2 text-neutral-600 transition-all duration-300 hover:text-neutral-700 dark:text-neutral-400 hover:dark:text-neutral-300"
-      // data-umami-event="Download Resume"
+      className="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-all duration-300 font-geist text-mono"
     >
-      <div className="overflow-hidden border-b-2 border-neutral-600 dark:border-neutral-500">
+      <div className="overflow-hidden border-b-2 border-on-surface-variant/50 hover:border-primary">
         <DownloadIcon
           data-testid="download-icon"
           className="animate-rain-arrow"

@@ -1,6 +1,7 @@
 import { SITE } from "@/lib/seo.config";
 import HomeSection from "@/modules/home/HomeSection";
 import { Metadata } from "next";
+import JsonLd, { personSchema } from "@/components/elements/JsonLd";
 
 export const metadata: Metadata = {
   title: "Pepcode — Software Engineer",
@@ -14,9 +15,9 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     images: [
       {
-        url: `${SITE.url}/og?title=Pepcode&subtitle=Software%20Engineer`,
-        width: 1200,
-        height: 630,
+        url: `${SITE.url}/Images/pepep-1.png`,
+        width: 250,
+        height: 200,
         alt: "Pepcode Portfolio Preview",
       },
     ],
@@ -26,10 +27,15 @@ export const metadata: Metadata = {
     title: "Pepcode — Software Engineer",
     description:
       "Portofolio Software Engineer dengan Next.js, TypeScript, dan Supabase.",
-    images: [`${SITE.url}/og?title=Pepcode&subtitle=Software%20Engineer`],
+    images: [`${SITE.url}/Images/pepep-1.png`],
   },
 };
 
 export default async function Home() {
-  return <HomeSection />;
+  return (
+    <>
+      <JsonLd data={personSchema()} />
+      <HomeSection />
+    </>
+  );
 }
