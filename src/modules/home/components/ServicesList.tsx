@@ -1,6 +1,6 @@
-import ServicesCard from './ServicesCard';
-import { IServices } from '@/types/services';
-import { servicesMock } from '@/constants/services';
+import ServicesCard from "./ServicesCard";
+import { IServices } from "@/types/services";
+import { servicesMock } from "@/constants/services";
 
 export default function ServicesList({ services }: { services?: IServices[] }) {
   return (

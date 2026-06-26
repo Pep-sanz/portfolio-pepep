@@ -43,7 +43,7 @@ export const projectItems: IProjectItem[] = [
     content:
       "This app enables real-time communication with support for group chats and multimedia messages.",
     is_show: true,
-    is_featured: true,
+    is_featured: false,
   },
   {
     id: 1,
@@ -79,7 +79,7 @@ export const projectItems: IProjectItem[] = [
     content:
       "An e-commerce application featuring dynamic product listings, cart management, and secure payment gateways.",
     is_show: true,
-    is_featured: false,
+    is_featured: true,
   },
   {
     id: 5,
