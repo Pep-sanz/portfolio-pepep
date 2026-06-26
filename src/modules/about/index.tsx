@@ -7,7 +7,7 @@ import PageContainer from "@/components/elements/PageContainer";
 
 export default function AboutSection() {
   return (
-    <PageContainer contentClassName="pt-16 md:pt-24">
+    <PageContainer contentClassName="pt-20 md:pt-28">
       <Summary />
       <DecorativeDivider color="primary" />
       <Career />

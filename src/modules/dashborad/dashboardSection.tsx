@@ -6,7 +6,7 @@ interface DashboardProps {
 }
 export default function Dashboard({ githubData }: DashboardProps) {
   return (
-    <PageContainer contentClassName="pt-16 md:pt-24">
+    <PageContainer contentClassName="pt-20 md:pt-28">
       <Contributions githubData={githubData} />
     </PageContainer>
   );

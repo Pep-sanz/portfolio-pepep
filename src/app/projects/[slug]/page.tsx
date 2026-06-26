@@ -1,19 +1,20 @@
-import { Metadata } from 'next';
-import BackButton from '@/components/elements/BackButton';
-import { projectItems } from '@/constants/dataProject';
-import ProjectDetail from '@/modules/project/components/ProjectDetail';
-import PageContainer from '@/components/elements/PageContainer';
-import { SITE } from '@/lib/seo.config';
-import JsonLd, { breadcrumbSchema, projectSchema } from '@/components/elements/JsonLd';
+import { Metadata } from "next";
+import BackButton from "@/components/elements/BackButton";
+import { projectItems } from "@/constants/dataProject";
+import ProjectDetail from "@/modules/project/components/ProjectDetail";
+import PageContainer from "@/components/elements/PageContainer";
+import { SITE } from "@/lib/seo.config";
+import JsonLd, {
+  breadcrumbSchema,
+  projectSchema,
+} from "@/components/elements/JsonLd";
 
 type Props = {
   params: { slug: string };
 };
 
 export async function generateStaticParams() {
-  return projectItems
-    .filter((p) => p.is_show)
-    .map((p) => ({ slug: p.slug }));
+  return projectItems.filter((p) => p.is_show).map((p) => ({ slug: p.slug }));
 }
 
 export const dynamicParams = false;
@@ -38,12 +39,12 @@ export default async function ProjectDetailPage({ params }: Props) {
   const project = detail;
   return (
     <div data-aos="fade-left">
-      <PageContainer contentClassName="pt-16 md:pt-24">
+      <PageContainer contentClassName="pt-20 md:pt-28">
         <JsonLd
           data={breadcrumbSchema([
-            { name: 'Home', url: '/' },
-            { name: 'Projects', url: '/projects' },
-            { name: project?.title || '', url: `/projects/${slug}` },
+            { name: "Home", url: "/" },
+            { name: "Projects", url: "/projects" },
+            { name: project?.title || "", url: `/projects/${slug}` },
           ])}
         />
         {project && (

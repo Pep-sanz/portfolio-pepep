@@ -9,7 +9,7 @@ const ContactForm = dynamic(() => import("./components/ContactForm"), {
 
 export default function ContactSection() {
   return (
-    <PageContainer contentClassName="pt-16 md:pt-24">
+    <PageContainer contentClassName="pt-20 md:pt-28">
       <section className="flex flex-col gap-8 md:gap-12">
         <ContactList />
         <ContactForm />
