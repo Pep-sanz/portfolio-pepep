@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 
 import Image from '@/components/elements/Image';
 import Tooltip from '@/components/elements/Tooltip';
@@ -10,9 +13,15 @@ export default function ProjectCard({
   slug,
   description,
   image,
+  mock_dark,
+  mock_light,
   stacks,
   is_featured,
 }: IProjectItem) {
+  const { theme } = useTheme();
+  const resolvedImage = theme === 'dark' && mock_dark ? mock_dark
+    : theme === 'light' && mock_light ? mock_light
+    : image;
   const trimmedContent =
     description.slice(0, 100) + (description.length > 100 ? '...' : '');
   return (
@@ -25,7 +34,7 @@ export default function ProjectCard({
         )}
         <div className="relative h-48 overflow-hidden">
           <Image
-            src={image}
+            src={resolvedImage}
             width={600}
             height={200}
             alt={title}

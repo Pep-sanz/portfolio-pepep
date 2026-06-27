@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image'
+import { useTheme } from 'next-themes'
 
 import { STACKS } from '@/constants/stacks'
 import ProjectLink from './ProjectLink'
@@ -7,6 +10,8 @@ type ProjectDetailProps = {
   title: string
   description: string
   image: string
+  mock_dark?: string
+  mock_light?: string
   stacks: string[]
   link_demo?: string | null
   link_github?: string | null
@@ -16,10 +21,16 @@ export default function ProjectDetail({
   title,
   description,
   image,
+  mock_dark,
+  mock_light,
   stacks,
   link_demo,
   link_github,
 }: ProjectDetailProps) {
+  const { theme } = useTheme()
+  const resolvedImage = theme === 'dark' && mock_dark ? mock_dark
+    : theme === 'light' && mock_light ? mock_light
+    : image
   return (
     <div className="flex flex-col items-stretch gap-8 md:gap-10">
       {description && (
@@ -54,7 +65,7 @@ export default function ProjectDetail({
           <div className="absolute inset-0 bg-primary/10 blur-[80px] rounded-full" />
           <div className="relative h-60 w-full overflow-hidden rounded-2xl grayscale transition-all duration-500 hover:grayscale-0 md:h-72 lg:h-96">
             <Image
-              src={image}
+              src={resolvedImage}
               alt={title || 'Project image'}
               fill
               className="object-cover object-top duration-700 hover:scale-105"

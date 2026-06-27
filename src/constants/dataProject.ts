@@ -7,7 +7,9 @@ export const projectItems: IProjectItem[] = [
     slug: "ecosystem-tree",
     description:
       "I participated in the development of the Ecosystem Tree CRM application with Arnatech to optimize the customer acquisition process for BRI Micro. This innovative platform helps BRI's marketing team manage referral pipelines and monitor follow-up actions effectively, ensuring seamless operations across various organizational levels.",
-    image: "/Images/ecosytem-tree.jpeg",
+    image: "/Images/ecosystem-tree-light.png",
+    mock_dark: "/Images/ecosystem-tree-dark.png",
+    mock_light: "/Images/ecosystem-tree-light.png",
     link_demo: null,
     link_github: null,
     stacks: [
@@ -29,7 +31,9 @@ export const projectItems: IProjectItem[] = [
     slug: "Mikro-Unit-Task-Monitoring",
     description:
       "I had the privilege of serving as a Frontend Developer at Arnatech, where I contributed to developing a comprehensive task monitoring platform for BRI (Bank Rakyat Indonesia). This solution enables efficient management and tracking of daily tasks for BRI units, allowing for streamlined operations and improved performance monitoring across various organizational levels.",
-    image: "/Images/task-monitoring.png",
+    image: "/Images/task-monitoring-light.png",
+    mock_dark: "/Images/task-monitoring-dark.png",
+    mock_light: "/Images/task-monitoring-light.png",
     link_demo: null,
     link_github: null,
     stacks: [
@@ -51,7 +55,9 @@ export const projectItems: IProjectItem[] = [
     slug: "portfolio-website",
     description:
       "A digital platform designed to showcase professional portfolios in a modern and interactive way. With an elegant and responsive design, this application allows me to showcase my work experience, projects, skills, and achievements in one easily accessible place.",
-    image: "/Images/portfolio.png",
+    image: "/Images/portfolio-light.png",
+    mock_dark: "/Images/portfolio-dark.png",
+    mock_light: "/Images/portfolio-light.png",
     link_demo: "https://portfolio-pepep.vercel.app/",
     link_github: "https://github.com/Pep-sanz/portfolio-pepep/",
     stacks: ["Next.js", "TypeScript", "Shadcn", "TailwindCSS", "Framer Motion"],
@@ -66,7 +72,9 @@ export const projectItems: IProjectItem[] = [
     slug: "ecommerce-app",
     description:
       "A Learning Management System (LMS) platform designed to simplify the digital learning process for educational institutions, businesses, and professional training. With an intuitive interface and comprehensive features, this application allows users to manage courses, access learning materials, and track learning progress in one well-organized place.",
-    image: "/Images/lms.png",
+    image: "/Images/lms-light.png",
+    mock_dark: "/Images/lms-dark.png",
+    mock_light: "/Images/lms-light.png",
     link_demo: "http://lms-porto.vercel.app/",
     link_github: null, //'https://github.com/fadhilrachman/lms-porto'
     stacks: [
@@ -101,7 +109,9 @@ export const projectItems: IProjectItem[] = [
     slug: "hcms-admin-secala-by-metranet",
     description:
       "HCMS (Human Capital Management System) is an integrated human resource management application designed to help companies manage the entire employee life cycle — from the recruitment process to performance management and personnel administration. Here I had the opportunity to participate in the development of this application when I worked at the Secala by Meternet company. role as a Frontend developer whose task is to ensure the appearance and integration with the Backend team.",
-    image: "/Images/hcms-admin-dashboard.png",
+    image: "/Images/hcms-light.png",
+    mock_dark: "/Images/hcms-dark.png",
+    mock_light: "/Images/hcms-light.png",
     link_demo: null, //"https://example.com/task-tool",
     link_github: null,
     stacks: [

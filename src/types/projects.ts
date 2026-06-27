@@ -4,6 +4,8 @@ export interface IProjectItem {
   slug: string;
   description: string;
   image: string;
+  mock_dark?: string;
+  mock_light?: string;
   link_demo?: string | null;
   link_github?: string | null;
   stacks: string[];
